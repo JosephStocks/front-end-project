@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let responsePromise = fetch('https://api.census.gov/data/2019/acs/acs1/spp?get=NAME,S0201_001E&for=county:*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206');
+        responsePromise.then((results) => {
+            return results.json();
+        })
+        .then((data) => {
+            console.log(data)
+        })
+
+        console.log(responsePromise)
+
+        for (let i = 0; i < 10000000; i++) {
+            let p = 2 + i;
+        }
+    </script>
+</body>
+
+</html>
