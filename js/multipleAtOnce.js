@@ -3,15 +3,14 @@ $.getJSON(
 ) // fetch specific character data object
     .done((data) => {
         console.log(data);
-        let oneDistrict = data.features[0].geometry.coordinates;
+        let oneDistrict = data.features;
         console.log(oneDistrict);
         loadMap(oneDistrict);
     });
 
-const loadMap = (coordinatesArr) => {
+const loadMap = (geojsonObject) => {
     mapboxgl.accessToken =
         "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
-
     var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
@@ -20,33 +19,33 @@ const loadMap = (coordinatesArr) => {
     });
 
     map.on("load", function () {
-        map.addSource("firstdistrict", {
+        map.addSource("national-park", {
             type: "geojson",
             data: {
-                type: "Feature",
-                geometry: {
-                    type: "Polygon",
-                    coordinates: coordinatesArr,
-                },
+                type: "FeatureCollection",
+                features: geojsonObject,
             },
         });
+
         map.addLayer({
-            id: "firstdistrict",
+            id: "park-boundary",
             type: "fill",
-            source: "firstdistrict",
-            layout: {},
+            source: "national-park",
             paint: {
-                "fill-color": "#088",
-                "fill-opacity": 0.8,
+                "fill-color": "#888888",
+                "fill-opacity": 0.4,
+            },
+            filter: ["==", "$type", "Polygon"],
+        });
+
+        map.addLayer({
+            id: "states-layer-outline",
+            type: "line",
+            source: "national-park",
+            paint: {
+                "line-color": "rgba(255, 0, 0, 1)",
+                "line-width": 2,
             },
         });
     });
 };
-
-
-//Target relevant span tags in censusInfo div
-var popDisplay = document.getElementById('pop');
-var incDisplay = document.getElementById('inc');
-var raceDisplay = document.getElementById('race');
-var ageDisplay = document.getElementById('age');
-var eduDisplay = document.getElementById('edu');
