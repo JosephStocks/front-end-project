@@ -1,10 +1,10 @@
 $.getJSON(
-    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
+    "https://opendata.arcgis.com/datasets/deae15e7f3db4b198946c17f0d169c39_3.geojson"
 ) // fetch specific character data object
     .done((data) => {
         console.log(data);
         let allDistrictsObj = data.features;
-        console.log(allDistrictsObj);
+        // console.log(allDistrictsObj);
         let modifiedDistrictsObj = addIDtoEachDistrict(allDistrictsObj);
         // console.log(modifiedDistrictsObj);
         loadMap(modifiedDistrictsObj);
@@ -21,7 +21,7 @@ const loadMap = (geojsonObject) => {
     });
     var hoveredStateId = null;
     map.on("load", function () {
-        map.addSource("district-outline-data", {
+        map.addSource("neighborhood-outline-data", {
             type: "geojson",
             data: {
                 type: "FeatureCollection",
@@ -30,9 +30,9 @@ const loadMap = (geojsonObject) => {
         });
 
         map.addLayer({
-            id: "district-fills",
+            id: "neighborhood-fills",
             type: "fill",
-            source: "district-outline-data",
+            source: "neighborhood-outline-data",
             layout: {},
             paint: {
                 "fill-color": "#627BC1",
@@ -46,9 +46,9 @@ const loadMap = (geojsonObject) => {
         });
 
         map.addLayer({
-            id: "district-borders",
+            id: "neighborhood-borders",
             type: "line",
-            source: "district-outline-data",
+            source: "neighborhood-outline-data",
             layout: {},
             paint: {
                 "line-color": "#627BC1",
@@ -58,44 +58,48 @@ const loadMap = (geojsonObject) => {
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
-        map.on("mousemove", "district-fills", function (e) {
+        map.on("mousemove", "neighborhood-fills", function (e) {
             if (e.features.length > 0) {
                 if (hoveredStateId) {
                     map.setFeatureState(
-                        { source: "district-outline-data", id: hoveredStateId },
+                        {
+                            source: "neighborhood-outline-data",
+                            id: hoveredStateId,
+                        },
                         { hover: false }
                     );
                 }
-                console.log(e.features[0].id);
+                // console.log(e.features[0].id);
                 let targetObj = e.features[0];
+                console.log(targetObj);
 
-                let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
+                // let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
-                    { source: "district-outline-data", id: hoveredStateId },
+                    { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: true }
                 );
 
-                // Shows the district data div only when hovered over a district
-                document.getElementById("member").textContent = MEMBER;
-                document.getElementById(
-                    "district-letter"
-                ).textContent = DISTRICT;
-                document.getElementById("phone").textContent = PHONE;
+                // // Shows the district data div only when hovered over a district
+                // document.getElementById("member").textContent = MEMBER;
+                // document.getElementById(
+                //     "district-letter"
+                // ).textContent = DISTRICT;
+                // document.getElementById("phone").textContent = PHONE;
 
-                document
-                    .getElementsByClassName("censusInfo")[0]
-                    .classList.remove("invisible");
+                // document
+                //     .getElementsByClassName("censusInfo")[0]
+                //     .classList.remove("invisible");
             }
         });
 
         // When the mouse leaves the state-fill layer, update the feature state of the
         // previously hovered feature.
-        map.on("mouseleave", "district-fills", function () {
+        map.on("mouseleave", "neighborhood-fills", function () {
             if (hoveredStateId) {
                 map.setFeatureState(
-                    { source: "district-outline-data", id: hoveredStateId },
+                    { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: false }
                 );
                 // hides the data div when not on the highlighted district
