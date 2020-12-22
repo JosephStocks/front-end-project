@@ -1,5 +1,5 @@
 $.getJSON(
-    "https://opendata.arcgis.com/datasets/e2826101978143b9beb39d52ead86019_0.geojson"
+    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
 ) // fetch specific character data object
     .done((data) => {
         console.log(data);
