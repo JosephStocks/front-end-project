@@ -42,3 +42,11 @@ const loadMap = (coordinatesArr) => {
         });
     });
 };
+
+
+//Target relevant span tags in censusInfo div
+var popDisplay = document.getElementById('pop');
+var incDisplay = document.getElementById('inc');
+var raceDisplay = document.getElementById('race');
+var ageDisplay = document.getElementById('age');
+var eduDisplay = document.getElementById('edu');
