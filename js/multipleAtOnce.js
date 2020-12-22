@@ -39,14 +39,13 @@ const loadMap = (geojsonObject) => {
         });
 
         map.addLayer({
-            id: "park-volcanoes",
-            type: "circle",
+            id: "states-layer-outline",
+            type: "line",
             source: "national-park",
             paint: {
-                "circle-radius": 6,
-                "circle-color": "#B42222",
+                "line-color": "rgba(255, 0, 0, 1)",
+                "line-width": 2,
             },
-            filter: ["==", "$type", "Point"],
         });
     });
 };
