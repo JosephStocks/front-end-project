@@ -29,30 +29,9 @@ $.getJSON(
         console.log(microdataAreasArr);
         microdataAreasArr = addIDtoEachMicroArea(microdataAreasArr);
 
-        // harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
-        //     let result = false;
-        //     if (
-        //         microDataObj.properties.NAME10.toLowerCase().includes(
-        //             "harris county"
-        //         )
-        //     ) {
-        //         result = true;
-        //     } else if (
-        //         microDataObj.properties.NAME10.toLowerCase().includes("houston")
-        //     ) {
-        //         result = true;
-        //     } else {
-        //         return false;
-        //     }
-        //     return result;
-        // });
         harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
             return microAreaIds.includes(microDataObj.properties.PUMACE10);
         });
-
-        // harrisCountyAreasArr = microdataAreasArr.forEach((element) => {
-        //     console.log(element.properties.NAME10);
-        // });
 
         loadMap(harrisCountyAreasArr);
     });
@@ -118,12 +97,13 @@ const loadMap = (geojsonObject) => {
                 }
                 // console.log(e.features[0].id);
                 let targetObj = e.features[0];
+                console.log(targetObj);
                 // console.log(targetObj.properties.NAME10);
                 // console.log(targetObj.properties);
 
                 // let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
-                console.log(hoveredStateId, targetObj.properties.PUMACE10);
+                // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
                     { source: "neighborhood-outline-data", id: hoveredStateId },
