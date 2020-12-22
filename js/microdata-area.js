@@ -136,10 +136,9 @@ const loadMap = (geojsonObject) => {
                 //     "district-letter"
                 // ).textContent = DISTRICT;
                 // document.getElementById("phone").textContent = PHONE;
-
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.remove("invisible");
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.remove("invisible");
             }
         });
 
