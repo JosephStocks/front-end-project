@@ -67,12 +67,26 @@ const loadMap = (geojsonObject) => {
                     );
                 }
                 console.log(e.features[0].id);
+                let targetObj = e.features[0];
+
+                let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
                     { source: "district-outline-data", id: hoveredStateId },
                     { hover: true }
                 );
+
+                // Shows the district data div only when hovered over a district
+                document.getElementById("member").textContent = MEMBER;
+                document.getElementById(
+                    "district-letter"
+                ).textContent = DISTRICT;
+                document.getElementById("phone").textContent = PHONE;
+
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.remove("invisible");
             }
         });
 
@@ -84,6 +98,10 @@ const loadMap = (geojsonObject) => {
                     { source: "district-outline-data", id: hoveredStateId },
                     { hover: false }
                 );
+                // hides the data div when not on the highlighted district
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.add("invisible");
             }
             hoveredStateId = null;
         });
@@ -97,3 +115,9 @@ const addIDtoEachDistrict = (districtsArr) => {
     }
     return districtsArr;
 };
+
+var popDisplay = document.getElementById("pop");
+var incDisplay = document.getElementById("inc");
+var raceDisplay = document.getElementById("race");
+var ageDisplay = document.getElementById("age");
+var eduDisplay = document.getElementById("edu");
