@@ -20,6 +20,8 @@ let microAreaIds = [
     "04619",
 ];
 
+let IdStatsObj = {};
+
 var censusCodeArr = [
     { name: "population", code: "B01003_001E" },
     { name: "malePop", code: "B01001_002E" },
@@ -39,27 +41,20 @@ var censusCodeArr = [
     { name: "graduateProf", code: "B07009_006E" },
 ];
 
-// var district = document.getElementById('district-letter')
-// var member = document.getElementById('member')
-// var phone = document.getElementById('phone');
-// var population = document.getElementById('pop');
-// var income = document.getElementById('inc');
-// var race = document.getElementById('race');
-// var age = document.getElementById('age');
-// var education = document.getElementById('edu');
-
 let codesArr = censusCodeArr.map((censusElementObj) => censusElementObj.code);
 let codeArrStr = codesArr.join(",");
 
-console.log(codeArrStr);
 $.getJSON(
     `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=public%20use%20microdata%20area:*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
 ) // fetch specific character data object
     .done((data) => {
-        console.log(data);
+        // console.log(data);
         harrisCountyAreasArr = data.filter((microDataArr) => {
             return microAreaIds.includes(microDataArr.slice(-1)[0]);
         });
-        popDisplay.innerHTML = harrisCountyAreasArr[0][1]
+        harrisCountyAreasArr.forEach((arr) => {
+            let tempId = arr.slice(-1)[0]
+            IdStatsObj[tempId] = arr.slice(0, -1)
+        })
         console.log(harrisCountyAreasArr);
     });
