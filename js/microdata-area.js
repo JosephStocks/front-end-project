@@ -1,24 +1,24 @@
-let microAreaIds = [
-    "04601",
-    "04602",
-    "04603",
-    "04604",
-    "04605",
-    "04606",
-    "04607",
-    "04608",
-    "04609",
-    "04610",
-    "04611",
-    "04612",
-    "04613",
-    "04614",
-    "04615",
-    "04616",
-    "04617",
-    "04618",
-    "04619",
-];
+// let microAreaIds = [
+//     "04601",
+//     "04602",
+//     "04603",
+//     "04604",
+//     "04605",
+//     "04606",
+//     "04607",
+//     "04608",
+//     "04609",
+//     "04610",
+//     "04611",
+//     "04612",
+//     "04613",
+//     "04614",
+//     "04615",
+//     "04616",
+//     "04617",
+//     "04618",
+//     "04619",
+// ];
 
 $.getJSON(
     "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
@@ -103,12 +103,21 @@ const loadMap = (geojsonObject) => {
 
                 // let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
+                let dataKey = hoveredStateId.toString().padStart(5, "0");
+                console.log(IdStatsObj[dataKey]);
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: true }
                 );
+
+                // Shows the district data div only when hovered over a district
+                // document.getElementById("member").textContent = MEMBER;
+                // document.getElementById(
+                //     "district-letter"
+                // ).textContent = DISTRICT;
+                // document.getElementById("phone").textContent = PHONE;
 
                 // // Shows the district data div only when hovered over a district
                 // document.getElementById("member").textContent = MEMBER;
@@ -154,3 +163,15 @@ var incDisplay = document.getElementById("inc");
 var raceDisplay = document.getElementById("race");
 var ageDisplay = document.getElementById("age");
 var eduDisplay = document.getElementById("edu");
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").classList.add("invisible");
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").classList.remove("invisible");
+}
