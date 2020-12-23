@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="demo" class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+
+
+    <script>
+        object = { 1: blah, 2: blah, 3: }
+
+
+        var select = document.getElementById('demo');
+
+        function logValue() {
+            // switch (this.value) {
+            //     case '1':
+            //         console.log('option 1 selected');
+            //         break;
+            //     case '2':
+            //         alert('option 2 selected');
+            //         break;
+            //     case '3':
+            //         confirm('You chose option 3, didn\'t you?');
+            //         break;
+            // }
+
+            return object[this.value]
+        }
+
+        select.addEventListener('change', logValue, false);
+    </script>
+</body>
+
+</html>

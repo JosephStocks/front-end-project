@@ -103,7 +103,7 @@ const loadMap = (geojsonObject) => {
 
                 // let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
-                let dataKey = hoveredStateId.toString().padStart(5, '0')
+                let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
@@ -125,9 +125,10 @@ const loadMap = (geojsonObject) => {
                 //     "district-letter"
                 // ).textContent = DISTRICT;
                 // document.getElementById("phone").textContent = PHONE;
-                document
-                    .getElementsByClassName("censusInfo")[0]
-                    .classList.remove("invisible");
+
+                // document
+                //     .getElementsByClassName("censusInfo")[0]
+                //     .classList.remove("invisible");
             }
         });
 
@@ -163,18 +164,14 @@ var raceDisplay = document.getElementById("race");
 var ageDisplay = document.getElementById("age");
 var eduDisplay = document.getElementById("edu");
 
-
-
 /* Set the width of the side navigation to 250px */
 function openNav() {
-document.getElementById("mySidenav").style.width = "250px";
-document.getElementById("main").classList.add("invisible");
-
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").classList.add("invisible");
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-document.getElementById("mySidenav").style.width = "0";
-document.getElementById("main").classList.remove("invisible");
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").classList.remove("invisible");
 }
-    
