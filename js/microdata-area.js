@@ -116,10 +116,9 @@ const loadMap = (geojsonObject) => {
                 //     "district-letter"
                 // ).textContent = DISTRICT;
                 // document.getElementById("phone").textContent = PHONE;
-
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.remove("invisible");
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.remove("invisible");
             }
         });
 
@@ -154,3 +153,16 @@ var incDisplay = document.getElementById("inc");
 var raceDisplay = document.getElementById("race");
 var ageDisplay = document.getElementById("age");
 var eduDisplay = document.getElementById("edu");
+
+
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+}
+    
