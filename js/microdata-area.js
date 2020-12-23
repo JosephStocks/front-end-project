@@ -110,16 +110,16 @@ const loadMap = (geojsonObject) => {
                     { hover: true }
                 );
 
-                // // Shows the district data div only when hovered over a district
-                // document.getElementById("member").textContent = MEMBER;
-                // document.getElementById(
-                //     "district-letter"
-                // ).textContent = DISTRICT;
-                // document.getElementById("phone").textContent = PHONE;
+                // Shows the district data div only when hovered over a district
+                document.getElementById("member").textContent = MEMBER;
+                document.getElementById(
+                    "district-letter"
+                ).textContent = DISTRICT;
+                document.getElementById("phone").textContent = PHONE;
 
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.remove("invisible");
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.remove("invisible");
             }
         });
 
@@ -154,3 +154,37 @@ var incDisplay = document.getElementById("inc");
 var raceDisplay = document.getElementById("race");
 var ageDisplay = document.getElementById("age");
 var eduDisplay = document.getElementById("edu");
+var censusCodeArr = [
+    { name: "population", code: "B01003_001E" },
+    { name: "malePop", code: "B01001_002E" },
+    { name: "femalePop", code: "B01001_026E" },
+    { name: "mAge", code: "B01002_001E" },
+    { name: "mIncome", code: "B06010_001E" },
+    { name: "whitePop", code: "B02001_002E" },
+    { name: "blackPop", code: "B02001_003E" },
+    { name: "asianPop", code: "B02001_005E" },
+    { name: "nativePop", code: "B02001_004E" },
+    { name: "islanderPop", code: "B02001_006E" },
+    { name: "otherPop", code: "B02001_007E" },
+    { name: "belowHighschool", code: "B07009_002E" },
+    { name: "highshoolEquiv", code: "B07009_003E" },
+    { name: "someCollege", code: "B07009_004E" },
+    { name: "bachelors", code: "B07009_005E" },
+    { name: "graduateProf", code: "B07009_006E" },
+];
+
+let codesArr = censusCodeArr.map((censusElementObj) => censusElementObj.code);
+let codeArrStr = codesArr.join(",");
+
+console.log(codeArrStr);
+$.getJSON(
+    `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=public%20use%20microdata%20area:*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
+) // fetch specific character data object
+    .done((data) => {
+        console.log(data);
+        harrisCountyAreasArr = data.filter((microDataArr) => {
+            return microAreaIds.includes(microDataArr.slice(-1)[0]);
+        });
+        popDisplay.innerHTML = harrisCountyAreasArr[0][1]
+        console.log(harrisCountyAreasArr);
+    });

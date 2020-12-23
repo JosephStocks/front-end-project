@@ -39,14 +39,14 @@ var censusCodeArr = [
     { name: "graduateProf", code: "B07009_006E" },
 ];
 
-var district = document.getElementById('district-letter')
-var member = document.getElementById('member')
-var phone = document.getElementById('phone');
-var population = document.getElementById('pop');
-var income = document.getElementById('inc');
-var race = document.getElementById('race');
-var age = document.getElementById('age');
-var education = document.getElementById('edu');
+// var district = document.getElementById('district-letter')
+// var member = document.getElementById('member')
+// var phone = document.getElementById('phone');
+// var population = document.getElementById('pop');
+// var income = document.getElementById('inc');
+// var race = document.getElementById('race');
+// var age = document.getElementById('age');
+// var education = document.getElementById('edu');
 
 let codesArr = censusCodeArr.map((censusElementObj) => censusElementObj.code);
 let codeArrStr = codesArr.join(",");
@@ -60,6 +60,6 @@ $.getJSON(
         harrisCountyAreasArr = data.filter((microDataArr) => {
             return microAreaIds.includes(microDataArr.slice(-1)[0]);
         });
-        population.innerHTML = harrisCountyAreasArr[0][1]
+        popDisplay.innerHTML = harrisCountyAreasArr[0][1]
         console.log(harrisCountyAreasArr);
     });
