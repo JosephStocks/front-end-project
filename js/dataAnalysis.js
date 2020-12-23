@@ -39,5 +39,6 @@ $.getJSON(
         harrisCountyAreasArr = data.filter((microDataArr) => {
             return microAreaIds.includes(microDataArr.slice(-1)[0]);
         });
+
         console.log(harrisCountyAreasArr);
     });
