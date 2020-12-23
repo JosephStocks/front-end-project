@@ -11,6 +11,7 @@ $.getJSON(
 const loadMap = (geojsonObject) => {
     mapboxgl.accessToken =
         "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
+        
     var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
