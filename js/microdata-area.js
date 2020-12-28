@@ -105,6 +105,7 @@ const loadMap = (geojsonObject) => {
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
+                ageDisplay.textContent = IdStatsObj[dataKey][4];
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
@@ -126,9 +127,9 @@ const loadMap = (geojsonObject) => {
                 // ).textContent = DISTRICT;
                 // document.getElementById("phone").textContent = PHONE;
 
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.remove("invisible");
+                document
+                    .getElementsByClassName("censusInfo")[0]
+                    .classList.remove("invisible");
             }
         });
 
