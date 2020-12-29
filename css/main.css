@@ -4,6 +4,14 @@ body {
     background-color: rgb(44, 44, 44);
 }
 
+li{
+    margin-left: 10%;
+}
+
+ul{
+    list-style-type: none;
+}
+
 .navbar{
     
 }

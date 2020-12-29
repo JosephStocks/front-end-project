@@ -78,15 +78,41 @@ const loadMap = (geojsonObject) => {
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
-                document.getElementById("incomeByBirth").textContent = Number(
+                document.getElementById("pop").textContent = Number(
                     IdStatsObj[dataKey][1]
                 ).toLocaleString();
+                document.getElementById("incomeByBirth").textContent = Number(
+                    IdStatsObj[dataKey][6]
+                ).toLocaleString();
                 document.getElementById("income").textContent = Number(
-                    IdStatsObj[dataKey][2]
+                    IdStatsObj[dataKey][7]
                 ).toLocaleString();
                 document.getElementById("medianIncome").textContent = Number(
-                    IdStatsObj[dataKey][3]
+                    IdStatsObj[dataKey][8]
                 ).toLocaleString();
+                
+                document.getElementById("whitePop").textContent = Number(
+                    IdStatsObj[dataKey][9]
+                ).toLocaleString() + Number(
+                    IdStatsObj[dataKey][9] / IdStatsObj[dataKey][1] * 100
+                ).toLocaleString();
+
+                document.getElementById("blackPop").textContent = Number(
+                    IdStatsObj[dataKey][10]
+                ).toLocaleString();
+                document.getElementById("asianPop").textContent = Number(
+                    IdStatsObj[dataKey][11]
+                ).toLocaleString();
+                document.getElementById("nativePop").textContent = Number(
+                    IdStatsObj[dataKey][12]
+                ).toLocaleString();
+                document.getElementById("islanderPop").textContent = Number(
+                    IdStatsObj[dataKey][13]
+                ).toLocaleString();
+                document.getElementById("otherPop").textContent = Number(
+                    IdStatsObj[dataKey][14]
+                ).toLocaleString();
+
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
