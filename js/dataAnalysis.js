@@ -25,14 +25,14 @@ let IdStatsObj = {};
 var censusCodeArr = [
     {
         fullName: "Population",
-        htmlID: "population",
+        htmlID: "totalPop",
         APIcode: "B01003_001E",
     },
-    {
-        fullName: "Total Race Population",
-        htmlID: "totalPop",
-        APIcode: "B02001_001E",
-    },
+    // {
+    //     fullName: "Total Race Population",
+    //     htmlID: "totalPop",
+    //     APIcode: "B02001_001E",
+    // },
     {
         fullName: "Male Population",
         htmlID: "malePop",
@@ -48,11 +48,11 @@ var censusCodeArr = [
         htmlID: "mAge",
         APIcode: "B01002_001E",
     },
-    {
-        fullName: "Individual Income by Birth Place",
-        htmlID: "incomeByBirth",
-        APIcode: "B06010_001E",
-    },
+    // {
+    //     fullName: "Individual Income by Birth Place",
+    //     htmlID: "incomeByBirth",
+    //     APIcode: "B06010_001E",
+    // },
     {
         fullName: "Individual Income",
         htmlID: "income",
@@ -135,7 +135,7 @@ $.getJSON(
     });
     harrisCountyAreasArr.forEach((arr) => {
         let tempId = arr.slice(-1)[0];
-        IdStatsObj[tempId] = arr.slice(0, -1);
+        IdStatsObj[tempId] = arr.slice(1, -1);
     });
     console.log(harrisCountyAreasArr);
 });
