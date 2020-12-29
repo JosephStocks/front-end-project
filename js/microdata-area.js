@@ -78,40 +78,83 @@ const loadMap = (geojsonObject) => {
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
-                document.getElementById("pop").textContent = Number(
-                    IdStatsObj[dataKey][1]
-                ).toLocaleString();
-                document.getElementById("incomeByBirth").textContent = Number(
-                    IdStatsObj[dataKey][6]
-                ).toLocaleString();
-                document.getElementById("income").textContent = Number(
-                    IdStatsObj[dataKey][7]
-                ).toLocaleString();
-                document.getElementById("medianIncome").textContent = Number(
-                    IdStatsObj[dataKey][8]
-                ).toLocaleString();
-                
-                document.getElementById("whitePop").textContent = Number(
-                    IdStatsObj[dataKey][9]
-                ).toLocaleString() + Number(
-                    IdStatsObj[dataKey][9] / IdStatsObj[dataKey][1] * 100
-                ).toLocaleString();
 
-                document.getElementById("blackPop").textContent = Number(
-                    IdStatsObj[dataKey][10]
-                ).toLocaleString();
-                document.getElementById("asianPop").textContent = Number(
-                    IdStatsObj[dataKey][11]
-                ).toLocaleString();
-                document.getElementById("nativePop").textContent = Number(
-                    IdStatsObj[dataKey][12]
-                ).toLocaleString();
-                document.getElementById("islanderPop").textContent = Number(
-                    IdStatsObj[dataKey][13]
-                ).toLocaleString();
-                document.getElementById("otherPop").textContent = Number(
-                    IdStatsObj[dataKey][14]
-                ).toLocaleString();
+                let convertedData = IdStatsObj[dataKey].map((element) =>
+                    Number(element)
+                );
+                console.log(`converted Data: ${convertedData}`);
+
+                let [
+                    totalPop,
+                    malePop,
+                    femalePop,
+                    medianAge,
+                    indIncome,
+                    medianIncome,
+                    whitePop,
+                    blackPop,
+                    asianPop,
+                    nativePop,
+                    islanderPop,
+                    otherPop,
+                    belowHighschool,
+                    highSchoolEquiv,
+                    someCollege,
+                    bachelors,
+                    graduateProf,
+                ] = convertedData;
+
+                document.getElementById(
+                    "totalPop"
+                ).textContent = totalPop.toLocaleString();
+                // document.getElementById("malePop").textContent = malePop;
+                // document.getElementById("femalePop").textContent = femalePop;
+                document.getElementById("medianAge").textContent = medianAge;
+                document.getElementById(
+                    "indIncome"
+                ).textContent = indIncome.toLocaleString();
+                document.getElementById(
+                    "medianIncome"
+                ).textContent = medianIncome.toLocaleString();
+
+                document.getElementById("whitePop").textContent = `${(
+                    (whitePop / totalPop) *
+                    100
+                ).toFixed(2)}% (${whitePop.toLocaleString()})`;
+                document.getElementById("blackPop").textContent = `${(
+                    (blackPop / totalPop) *
+                    100
+                ).toFixed(2)}% (${blackPop.toLocaleString()})`;
+                document.getElementById("asianPop").textContent = `${(
+                    (asianPop / totalPop) *
+                    100
+                ).toFixed(2)}% (${asianPop.toLocaleString()})`;
+                document.getElementById("nativePop").textContent = `${(
+                    (nativePop / totalPop) *
+                    100
+                ).toFixed(2)}% (${nativePop.toLocaleString()})`;
+                document.getElementById("islanderPop").textContent = `${(
+                    (islanderPop / totalPop) *
+                    100
+                ).toFixed(2)}% (${islanderPop.toLocaleString()})`;
+                document.getElementById("otherPop").textContent = `${(
+                    (otherPop / totalPop) *
+                    100
+                ).toFixed(2)}% (${otherPop.toLocaleString()})`;
+
+                // document.getElementById(
+                //     "belowHighschool"
+                // ).textContent = belowHighschool;
+                // document.getElementById(
+                //     "highSchoolEquiv"
+                // ).textContent = highSchoolEquiv;
+                // document.getElementById(
+                //     "someCollege"
+                // ).textContent = someCollege;
+                // document.getElementById("bachelors").textContent = bachelors;
+                // document.getElementById(
+                //     "graduateProf"
+                // ).textContent = graduateProf;
 
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
