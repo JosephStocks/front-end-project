@@ -4,9 +4,6 @@ body {
     background-color: rgb(44, 44, 44);
 }
 
-<<<<<<< HEAD
-/* .navbar{
-=======
 li{
     margin-left: 10%;
 }
@@ -15,8 +12,11 @@ ul{
     list-style-type: none;
 }
 
+/* span{
+    float:inline-end
+} */
+
 .navbar{
->>>>>>> main
     
 } */
 
