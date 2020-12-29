@@ -1,25 +1,3 @@
-// let microAreaIds = [
-//     "04601",
-//     "04602",
-//     "04603",
-//     "04604",
-//     "04605",
-//     "04606",
-//     "04607",
-//     "04608",
-//     "04609",
-//     "04610",
-//     "04611",
-//     "04612",
-//     "04613",
-//     "04614",
-//     "04615",
-//     "04616",
-//     "04617",
-//     "04618",
-//     "04619",
-// ];
-
 $.getJSON(
     "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
 ) // fetch specific character data object
@@ -105,7 +83,15 @@ const loadMap = (geojsonObject) => {
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
-                ageDisplay.textContent = IdStatsObj[dataKey][4];
+                document.getElementById("incomeByBirth").textContent = Number(
+                    IdStatsObj[dataKey][1]
+                ).toLocaleString();
+                document.getElementById("income").textContent = Number(
+                    IdStatsObj[dataKey][2]
+                ).toLocaleString();
+                document.getElementById("medianIncome").textContent = Number(
+                    IdStatsObj[dataKey][3]
+                ).toLocaleString();
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
