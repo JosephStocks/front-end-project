@@ -26,7 +26,7 @@ var censusCodeArr = [
     {
         fullName: "Population",
         htmlID: "population",
-        code: "B01003_001E",
+        APIcode: "B01003_001E",
     },
     {
         fullName: "Total Race Population",
@@ -120,7 +120,9 @@ var censusCodeArr = [
     },
 ];
 
-let codesArr = censusCodeArr.map((censusElementObj) => censusElementObj.code);
+let codesArr = censusCodeArr.map(
+    (censusElementObj) => censusElementObj.APIcode
+);
 let codeArrStr = codesArr.join(",");
 
 $.getJSON(
