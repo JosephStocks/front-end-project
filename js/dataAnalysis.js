@@ -118,6 +118,11 @@ var censusCodeArr = [
         htmlID: "graduateProf",
         APIcode: "B07009_006E",
     },
+    {
+        fullName: "Total Education Count",
+        htmlID: "totalEdu",
+        APIcode: "B07009_001E",
+    },
 ];
 
 let codesArr = censusCodeArr.map(

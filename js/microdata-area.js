@@ -102,6 +102,7 @@ const loadMap = (geojsonObject) => {
                     someCollege,
                     bachelors,
                     graduateProf,
+                    totalEdu,
                 ] = convertedData;
 
                 document.getElementById(
@@ -117,45 +118,43 @@ const loadMap = (geojsonObject) => {
                     "medianIncome"
                 ).textContent = medianIncome.toLocaleString();
 
+
+                document.getElementById("totalRace").textContent = `${totalPop.toLocaleString()}`;
                 document.getElementById("whitePop").textContent = `${(
-                    (whitePop / totalPop) *
-                    100
+                    (whitePop / totalPop) * 100
                 ).toFixed(2)}% (${whitePop.toLocaleString()})`;
                 document.getElementById("blackPop").textContent = `${(
-                    (blackPop / totalPop) *
-                    100
+                    (blackPop / totalPop) * 100
                 ).toFixed(2)}% (${blackPop.toLocaleString()})`;
                 document.getElementById("asianPop").textContent = `${(
-                    (asianPop / totalPop) *
-                    100
+                    (asianPop / totalPop) * 100
                 ).toFixed(2)}% (${asianPop.toLocaleString()})`;
                 document.getElementById("nativePop").textContent = `${(
-                    (nativePop / totalPop) *
-                    100
+                    (nativePop / totalPop) * 100
                 ).toFixed(2)}% (${nativePop.toLocaleString()})`;
                 document.getElementById("islanderPop").textContent = `${(
-                    (islanderPop / totalPop) *
-                    100
+                    (islanderPop / totalPop) * 100
                 ).toFixed(2)}% (${islanderPop.toLocaleString()})`;
                 document.getElementById("otherPop").textContent = `${(
-                    (otherPop / totalPop) *
-                    100
+                    (otherPop / totalPop) * 100
                 ).toFixed(2)}% (${otherPop.toLocaleString()})`;
 
-                // document.getElementById(
-                //     "belowHighschool"
-                // ).textContent = belowHighschool;
-                // document.getElementById(
-                //     "highSchoolEquiv"
-                // ).textContent = highSchoolEquiv;
-                // document.getElementById(
-                //     "someCollege"
-                // ).textContent = someCollege;
-                // document.getElementById("bachelors").textContent = bachelors;
-                // document.getElementById(
-                //     "graduateProf"
-                // ).textContent = graduateProf;
-
+                document.getElementById("totalEdu").textContent = `${totalEdu.toLocaleString()}`;
+                document.getElementById("belowHighschool").textContent = `${(
+                    (belowHighschool / totalEdu) * 100
+                ).toFixed(2)}% (${belowHighschool.toLocaleString()})`;
+                document.getElementById("highSchoolEquiv").textContent = `${(
+                    (highSchoolEquiv / totalEdu) * 100
+                ).toFixed(2)}% (${highSchoolEquiv.toLocaleString()})`;
+                document.getElementById("someCollege").textContent = `${(
+                    (someCollege / totalEdu) * 100
+                ).toFixed(2)}% (${someCollege.toLocaleString()})`;
+                document.getElementById("bachelors").textContent = `${(
+                    (bachelors / totalEdu) * 100
+                ).toFixed(2)}% (${bachelors.toLocaleString()})`;
+                document.getElementById("graduateProf" ).textContent = `${(
+                    (graduateProf / totalEdu) * 100
+                ).toFixed(2)}% (${graduateProf.toLocaleString()})`;
                 // console.log(hoveredStateId, targetObj.properties.PUMACE10);
                 // hoveredStateId = e.features[0].properties.DISTRICT;
                 map.setFeatureState(
