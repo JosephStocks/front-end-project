@@ -1,18 +1,17 @@
 $.getJSON(
     "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
-) // fetch specific character data object
-    .done((data) => {
-        console.log(data);
-        let microdataAreasArr = data.features;
-        console.log(microdataAreasArr);
-        microdataAreasArr = addIDtoEachMicroArea(microdataAreasArr);
+).done((data) => {
+    console.log(data);
+    let microdataAreasArr = data.features;
+    console.log(microdataAreasArr);
+    microdataAreasArr = addIDtoEachMicroArea(microdataAreasArr);
 
-        harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
-            return microAreaIds.includes(microDataObj.properties.PUMACE10);
-        });
-
-        loadMap(harrisCountyAreasArr);
+    harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
+        return microAreaIds.includes(microDataObj.properties.PUMACE10);
     });
+
+    loadMap(harrisCountyAreasArr);
+});
 
 const loadMap = (geojsonObject) => {
     mapboxgl.accessToken =
@@ -73,13 +72,9 @@ const loadMap = (geojsonObject) => {
                         { hover: false }
                     );
                 }
-                // console.log(e.features[0].id);
                 let targetObj = e.features[0];
                 console.log(targetObj);
-                // console.log(targetObj.properties.NAME10);
-                // console.log(targetObj.properties);
 
-                // let { DISTRICT, MEMBER, PHONE } = targetObj.properties;
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
@@ -98,20 +93,6 @@ const loadMap = (geojsonObject) => {
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: true }
                 );
-
-                // Shows the district data div only when hovered over a district
-                // document.getElementById("member").textContent = MEMBER;
-                // document.getElementById(
-                //     "district-letter"
-                // ).textContent = DISTRICT;
-                // document.getElementById("phone").textContent = PHONE;
-
-                // // Shows the district data div only when hovered over a district
-                // document.getElementById("member").textContent = MEMBER;
-                // document.getElementById(
-                //     "district-letter"
-                // ).textContent = DISTRICT;
-                // document.getElementById("phone").textContent = PHONE;
 
                 document
                     .getElementsByClassName("censusInfo")[0]
@@ -151,6 +132,7 @@ var raceDisplay = document.getElementById("race");
 var ageDisplay = document.getElementById("age");
 var eduDisplay = document.getElementById("edu");
 
+// EXPANDING/COLLAPSING SIDEBAR
 /* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
