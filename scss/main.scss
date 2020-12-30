@@ -4,8 +4,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(44, 44, 44);
-    row-gap: 20px;
-    column-gap: 10px;
 }
 
 #hamburger-button {
@@ -97,8 +95,13 @@ body {
             transform: scale(1.05);
         }
     }
+}
 
-    .example {
-        color: white;
-    }
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    z-index: -100;
 }
