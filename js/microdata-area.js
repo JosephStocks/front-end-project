@@ -225,3 +225,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
+
+$(".censusInfo").hover((element) => {
+    $(".censusInfo").toggleClass("collapsedHeight");
+});

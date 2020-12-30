@@ -38,6 +38,10 @@ body {
   right: 0px;
 }
 
+.censusInfo.collapsedHeight {
+  height: 100px;
+}
+
 .flex-line {
   display: -webkit-box;
   display: -ms-flexbox;
