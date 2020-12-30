@@ -5,13 +5,18 @@ body {
 }
 
 li{
-    margin-left: 10%;
+    /* margin-left: 10%; */
 }
 
 ul{
     list-style-type: none;
+    /* padding: 0; */
 }
 
+.singleData {
+    /* display: flex;
+    justify-content: space-between; */
+}
 /* span{
     float:inline-end
 } */
@@ -47,18 +52,26 @@ ul{
     margin-top: 5px;
     margin-left: 5px;
     padding: 5px;
-    width: 30%;
+    /* width: 30%; */
     border: 2px solid black;
     font-size: 14px;
-    color: #222;
-    background-color: #fff;
+    color: black;
     border-radius: 3px;
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem;
     display: inline-block;
     right: 0px;
 }
 
+.right-align {
+    display: inline-block;
+    width: 140px;
+}
+
+.flex-line {
+    display: flex;
+    justify-content: space-between;
+}
 /* .invisible {
     display: none !important;
 } */
