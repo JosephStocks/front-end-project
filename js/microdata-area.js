@@ -229,3 +229,11 @@ function closeNav() {
 $(".censusInfo").hover((element) => {
     $(".censusInfo").toggleClass("collapsedHeight");
 });
+
+// $('body').click((element) => {
+
+// })
+
+$("body").on("click", ":not(.censusInfo)", function () {
+    $(".censusInfo").removeClass("collapsedHeight");
+});
