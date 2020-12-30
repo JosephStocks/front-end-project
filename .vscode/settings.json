@@ -1,5 +1,6 @@
 {
     "liveSassCompile.settings.formats":[
+<<<<<<< HEAD
         {
             "format": "expanded",
             "extensionName": ".css",
@@ -7,4 +8,14 @@
         }
     ],
     "liveSassCompile.settings.generateMap": false
+=======
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css-src/"
+        },
+
+    ]
+>>>>>>> 5c232ff5e00ce7a2060d418fcefba740a6f3287c
 }
