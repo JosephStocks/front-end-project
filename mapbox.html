@@ -21,31 +21,36 @@
             <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
 
-        <div class='censusInfo invisible col-4 offset-6'>
-            <div><strong>Population: </strong><span id='totalPop'>0</span></div>
-            <div><strong>Income: </strong><span id='indIncome'>0</span></div>
-            <div><strong>Median Income: </strong><span id='medianIncome'>0</span></div>
-            <div><strong>Median Age: </strong> <span id='medianAge'>0</span></div>
-            <div><strong>Race Distribution: </strong><span id='race'></span>
+        <div class='censusInfo invisible col-3 offset-7'>
+            <div class="flex-line"><strong>Population: </strong><span class="right-align" id='totalPop'>0</span></div>
+            <div class="flex-line"><strong>Income: </strong><span class="right-align">$<span id='indIncome'>0</span>
+                    USD</span></div>
+            <div class="flex-line"><strong>Median Income: </strong><span class="right-align">$<span
+                        id='medianIncome'>0</span> USD</span></div>
+            <div class="flex-line"><strong>Median Age: </strong><span class="right-align" id='medianAge'>0</span></div>
+            <div><strong>Race Distribution: </strong>
                 <ul>
-                    <li>Total Count: <span id='totalRace'>0</span></li>
-                    <li>White: <span id='whitePop'>0</span></li>
-                    <li>Black/African American: <span id='blackPop'>0</span></li>
-                    <li>Asian: <span id='asianPop'>0</span></li>
-                    <li>American Indian: <span id='nativePop'>0</span></li>
-                    <li>Hawaiian/Pacific Islander: <span id='islanderPop'>0</span></li>
-                    <li>Other: <span id='otherPop'>0</span></li>
+                    <li class="flex-line">Total Count: <span class="right-align" id='totalRace'>0</span></li>
+                    <li class="flex-line">White: <span class="right-align" id='whitePop'>0</span></li>
+                    <li class="flex-line">Black/African American: <span class="right-align" id='blackPop'>0</span></li>
+                    <li class="flex-line">Asian: <span class="right-align" id='asianPop'>0</span></li>
+                    <li class="flex-line">American Indian: <span class="right-align" id='nativePop'>0</span></li>
+                    <li class="flex-line">Hawaiian/Pacific Islander: <span class="right-align" id='islanderPop'>0</span>
+                    </li>
+                    <li class="flex-line">Other: <span class="right-align" id='otherPop'>0</span></li>
                 </ul>
             </div>
             <div><strong>Education: </strong> <span id='edu'></span></div>
-                <ul>
-                    <li>Total Count: <span id='totalEdu'>0</span></li>
-                    <li>Below High School: <span id='belowHighschool'>0</span></li>
-                    <li>High School Equivalent: <span id='highSchoolEquiv'>0</span></li>
-                    <li>Some College: <span id='someCollege'>0</span></li>
-                    <li>Bachelors Degree: <span id='bachelors'>0</span></li>
-                    <li>Graduate Degree/Professional: <span id='graduateProf'>0</span></li>
-                </ul>
+            <ul>
+                <li class="flex-line">Total Count: <span class="right-align" id='totalEdu'>0</span></li>
+                <li class="flex-line">Below High School: <span class="right-align" id='belowHighschool'>0</span></li>
+                <li class="flex-line">High School Equivalent: <span class="right-align" id='highSchoolEquiv'>0</span>
+                </li>
+                <li class="flex-line">Some College: <span class="right-align" id='someCollege'>0</span></li>
+                <li class="flex-line">Bachelors Degree: <span class="right-align" id='bachelors'>0</span></li>
+                <li class="flex-line">Graduate Degree/Professional: <span class="right-align" id='graduateProf'>0</span>
+                </li>
+            </ul>
         </div>
     </div>
     <div id="mySidenav" class="sidenav">
