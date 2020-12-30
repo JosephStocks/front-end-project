@@ -111,12 +111,8 @@ const loadMap = (geojsonObject) => {
                 // document.getElementById("malePop").textContent = malePop;
                 // document.getElementById("femalePop").textContent = femalePop;
                 document.getElementById("medianAge").textContent = medianAge;
-                document.getElementById(
-                    "indIncome"
-                ).textContent = indIncome.toLocaleString();
-                document.getElementById(
-                    "medianIncome"
-                ).textContent = medianIncome.toLocaleString();
+                document.getElementById("indIncome").textContent = `$${indIncome.toLocaleString()} USD`;
+                document.getElementById("medianIncome").textContent = `$${medianIncome.toLocaleString()} USD`;
 
 
                 document.getElementById("totalRace").textContent = `${totalPop.toLocaleString()}`;
