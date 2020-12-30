@@ -1,3 +1,4 @@
-.vscode
+# .vscode
 .ipynb_checkpoints
 node_modules
+main.css.map
