@@ -190,9 +190,9 @@ const loadMap = (geojsonObject) => {
                     { hover: false }
                 );
                 // hides the data div when not on the highlighted district
-                document
-                    .getElementsByClassName("censusInfo")[0]
-                    // .classList.add("invisible");
+                // document
+                //     .getElementsByClassName("censusInfo")[0]
+                //     .classList.add("invisible");
             }
             hoveredStateId = null;
         });
@@ -219,3 +219,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
+
+$(".censusInfo").hover((element) => {
+    $(".censusInfo").toggleClass("collapsedHeight");
+});

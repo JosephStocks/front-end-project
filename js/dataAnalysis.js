@@ -59,9 +59,9 @@ var censusCodeArr = [
     //     APIcode: "B07010_001E",
     // },
     {
-        fullName: "Median Income",
+        fullName: "Median Household Income",
         htmlID: "medianIncome",
-        APIcode: "B07011_001E",
+        APIcode: "B19013_001E",
     },
     {
         fullName: "White",
