@@ -38,6 +38,10 @@ body {
     padding: 2rem;
     display: inline-block;
     right: 0px;
+
+    &.collapsedHeight {
+        height: 100px;
+    }
 }
 
 .flex-line {
