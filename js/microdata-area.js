@@ -111,8 +111,8 @@ const loadMap = (geojsonObject) => {
                 // document.getElementById("malePop").textContent = malePop;
                 // document.getElementById("femalePop").textContent = femalePop;
                 document.getElementById("medianAge").textContent = medianAge;
-                document.getElementById("indIncome").textContent = `$${indIncome.toLocaleString()} USD`;
-                document.getElementById("medianIncome").textContent = `$${medianIncome.toLocaleString()} USD`;
+                document.getElementById("indIncome").textContent = indIncome.toLocaleString();
+                document.getElementById("medianIncome").textContent = medianIncome.toLocaleString();
 
                 document.getElementById(
                     "totalRace"
@@ -203,12 +203,6 @@ const addIDtoEachMicroArea = (districtsArr) => {
     }
     return districtsArr;
 };
-
-var popDisplay = document.getElementById("pop");
-var incDisplay = document.getElementById("inc");
-var raceDisplay = document.getElementById("race");
-var ageDisplay = document.getElementById("age");
-var eduDisplay = document.getElementById("edu");
 
 // EXPANDING/COLLAPSING SIDEBAR
 /* Set the width of the side navigation to 250px */

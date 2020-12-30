@@ -78,6 +78,9 @@ ul{
 
 /* The side navigation menu */
 .sidenav {
+    /* for introductory text */
+    color:rgba(255, 255, 255, 0.85);
+    text-align: center;
     height: 100%; /* 100% Full-height */
     /* width: 0; 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
