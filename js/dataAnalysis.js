@@ -53,11 +53,11 @@ var censusCodeArr = [
     //     htmlID: "incomeByBirth",
     //     APIcode: "B06010_001E",
     // },
-    {
-        fullName: "Individual Income",
-        htmlID: "income",
-        APIcode: "B07010_001E",
-    },
+    // {
+    //     fullName: "Individual Income",
+    //     htmlID: "income",
+    //     APIcode: "B07010_001E",
+    // },
     {
         fullName: "Median Income",
         htmlID: "medianIncome",
