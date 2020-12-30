@@ -192,7 +192,7 @@ const loadMap = (geojsonObject) => {
                 // hides the data div when not on the highlighted district
                 document
                     .getElementsByClassName("censusInfo")[0]
-                    .classList.add("invisible");
+                    // .classList.add("invisible");
             }
             hoveredStateId = null;
         });

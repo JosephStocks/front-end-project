@@ -126,6 +126,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
+  height: 70px;
   text-decoration: underline;
 }
