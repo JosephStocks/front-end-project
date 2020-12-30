@@ -79,6 +79,7 @@ const loadMap = (geojsonObject) => {
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
                 console.log(IdStatsObj[dataKey]);
 
+                let areaName = targetObj.properties.NAME10;
                 let convertedData = IdStatsObj[dataKey].map((element) =>
                     Number(element)
                 );
@@ -89,7 +90,6 @@ const loadMap = (geojsonObject) => {
                     malePop,
                     femalePop,
                     medianAge,
-                    indIncome,
                     medianIncome,
                     whitePop,
                     blackPop,
@@ -105,15 +105,14 @@ const loadMap = (geojsonObject) => {
                     totalEdu,
                 ] = convertedData;
 
+                console.log(`AreaName: ${areaName}`);
+                document.getElementById("areaName").textContent = areaName;
                 document.getElementById(
                     "totalPop"
                 ).textContent = totalPop.toLocaleString();
                 // document.getElementById("malePop").textContent = malePop;
                 // document.getElementById("femalePop").textContent = femalePop;
                 document.getElementById("medianAge").textContent = medianAge;
-                document.getElementById(
-                    "indIncome"
-                ).textContent = indIncome.toLocaleString();
                 document.getElementById(
                     "medianIncome"
                 ).textContent = medianIncome.toLocaleString();
