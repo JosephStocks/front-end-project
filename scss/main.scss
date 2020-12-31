@@ -1,9 +1,18 @@
-// @import "variables";
-
 body {
     margin: 0;
     padding: 0;
     background-color: rgb(44, 44, 44);
+}
+
+ul {
+    margin: 1px;
+    // padding: 0;
+    // white-space: normal;
+}
+
+.topRow {
+    display: flex;
+    flex-direction: column;
 }
 
 #hamburger-button {
@@ -24,24 +33,44 @@ body {
 }
 
 .censusInfo {
+    width: 100%;
     position: absolute;
+    z-index: 100;
     font-family: sans-serif;
-    margin-top: 5px;
-    margin-left: 5px;
-    padding: 5px;
+    padding: 10px;
+    padding-top: 3px;
     /* width: 30%; */
     border: 2px solid black;
     font-size: 14px;
     color: black;
     border-radius: 3px;
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 2rem;
     display: inline-block;
-    right: 0px;
 
     &.collapsedHeight {
         height: 100px;
     }
+}
+
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+
+    #areaName {
+        width: 300px;
+        display: inline-block;
+        min-height: 50px;
+        max-width: 80%;
+        text-decoration: underline;
+        // border: green solid 2px;
+        text-align: center;
+        white-space: normal;
+        margin-bottom: 3px;
+    }
+}
+
+li {
+    margin-left: 0;
 }
 
 .flex-line {
@@ -51,7 +80,7 @@ body {
 
 .right-align {
     display: inline-block;
-    width: 140px;
+    width: 110px;
 }
 
 .sidenav {
@@ -110,16 +139,52 @@ body {
     z-index: -100;
 }
 
-.title-wrapper {
-    display: flex;
-    justify-content: center;
+@media all and (min-width: 500px) {
+    .censusInfo {
+        position: absolute;
+        font-family: sans-serif;
+        margin-top: 1px;
+        margin-right: 1px;
+        padding: 5px;
+        width: 25%;
+        border: 2px solid black;
+        font-size: 14px;
+        color: black;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 2rem;
+        display: inline-block;
+        right: 0px;
 
-    #areaName {
-        width: 70%;
+        &.collapsedHeight {
+            height: 100px;
+        }
+    }
+
+    .title-wrapper {
         display: flex;
         justify-content: center;
-        height: 50px;
-        text-decoration: underline;
-        // text-align: center;
+
+        #areaName {
+            width: 300px;
+            display: inline-block;
+            min-height: 50px;
+            max-width: 80%;
+            text-decoration: underline;
+            // border: green solid 2px;
+            text-align: center;
+            white-space: normal;
+            margin-bottom: 10px;
+        }
+    }
+
+    .flex-line {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .right-align {
+        display: inline-block;
+        width: 140px;
     }
 }
