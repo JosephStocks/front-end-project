@@ -226,14 +226,26 @@ function closeNav() {
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
 
-$(".censusInfo").hover((element) => {
-    $(".censusInfo").toggleClass("collapsedHeight");
-});
-
 // $('body').click((element) => {
 
 // })
 
-$("body").on("click", ":not(.censusInfo)", function () {
-    $(".censusInfo").removeClass("collapsedHeight");
+// $("body").on("click", ":not(.censusInfo)", function () {
+//     $(".censusInfo").removeClass("collapsedHeight");
+// });
+
+let widthMatch = window.matchMedia("(max-width: 500px)");
+// mm in the function arg is the matchMedia object, passed back into the function
+widthMatch.addEventListener("change", function (mm) {
+    if (mm.matches) {
+        // it matches the media query: that is, min-width is >= 500px
+        $(".censusInfo").addClass("collapsedHeight");
+
+        $(".censusInfo").hover((element) => {
+            $(".censusInfo").toggleClass("collapsedHeight");
+        });
+    } else {
+        // it no longer matches the media query
+        // remove the event listener
+    }
 });

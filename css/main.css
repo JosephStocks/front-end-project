@@ -132,4 +132,6 @@ body {
           justify-content: center;
   height: 50px;
   text-decoration: underline;
+  border: red solid 2px;
+  word-wrap: break-word;
 }
