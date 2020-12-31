@@ -224,62 +224,35 @@ function closeNav() {
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
 
-// $(".censusInfo").hover((element) => {
-//     $(".censusInfo").toggleClass("collapsedHeight");
-// });
+let widthMatch = window.matchMedia("(max-width: 500px)");
+// mm in the function arg is the matchMedia object, passed back into the function
 
-// function resize(x) {
-//     if (x.matches) { // If media query matches
-//         $(".censusInfo").hover((element) => {
-//             $(".censusInfo").toggleClass("collapsedHeight");
-//         });    
-//     } else {
-//         $(".censusInfo").removeClass("collapsedHeight");
-//     }
-//   }
+if (widthMatch.matches) {
+    // it matches the media query: that is, min-width is >= 500px
+    $(".censusInfo").addClass("collapsedHeight");
 
-//   var x = window.matchMedia("(max-width: 500px)")
-//   resize(x) // Call listener function at run time
-//   x.addEventListener(resize) // Attach listener function on state changes
+    $(".censusInfo").click((element) => {
+        $(".censusInfo").toggleClass("collapsedHeight");
+    });
 
-// const mediaQueryList = window.matchMedia("(max-width: 500px)");
-// if (mediaQueryList.matches) {
-//         $(".censusInfo").hover((element) => {
-//             $(".censusInfo").toggleClass("collapsedHeight");
-//         });  
-//     } else {
-//         $(".censusInfo").removeClass("collapsedHeight");
-// }
+    console.log("FirstFunction Small");
+} else {
+    $(".censusInfo").removeClass("collapsedHeight");
+    // $(".censusInfo").off("click");
+}
 
-// Create the query list.
-const mediaQueryList = window.matchMedia("(max-width: 500px)");
+widthMatch.addEventListener("change", function (mm) {
+    if (mm.matches) {
+        // it matches the media query: that is, min-width is >= 500px
+        $(".censusInfo").addClass("collapsedHeight");
 
-// Run the orientation change handler once.
-handleResizeChange(mediaQueryList);
-
-// Add the callback function as a listener to the query list.
-mediaQueryList.addEventListener(handleResizeChange);
-
-function handleResizeChange(evt) {
-    if (evt.matches) {
-        $(".censusInfo").hover((element) => {
+        $(".censusInfo").click((element) => {
             $(".censusInfo").toggleClass("collapsedHeight");
-        });      
+        });
+
+        console.log("Inside change Listener: Small");
     } else {
         $(".censusInfo").removeClass("collapsedHeight");
-    }   
-}
-// let widthMatch = window.matchMedia("(max-width: 500px)");
-// // mm in the function arg is the matchMedia object, passed back into the function
-// widthMatch.addEventListener("change", function (mm) {
-//     if (mm.matches) {
-//         // it matches the media query: that is, min-width is >= 500px
-//         $(".censusInfo").addClass("collapsedHeight");       
-//         $(".censusInfo").hover((element) => {
-//             $(".censusInfo").toggleClass("collapsedHeight");
-//         });
-//     } else {
-//         // it no longer matches the media query
-//         // remove the event listener
-//     }
-// });
+        $(".censusInfo").off("click");
+    }
+});
