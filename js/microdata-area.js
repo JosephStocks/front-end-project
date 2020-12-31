@@ -207,12 +207,6 @@ const addIDtoEachMicroArea = (districtsArr) => {
     return districtsArr;
 };
 
-var popDisplay = document.getElementById("pop");
-var incDisplay = document.getElementById("inc");
-var raceDisplay = document.getElementById("race");
-var ageDisplay = document.getElementById("age");
-var eduDisplay = document.getElementById("edu");
-
 // EXPANDING/COLLAPSING SIDEBAR
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -226,26 +220,35 @@ function closeNav() {
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
 
-// $('body').click((element) => {
-
-// })
-
-// $("body").on("click", ":not(.censusInfo)", function () {
-//     $(".censusInfo").removeClass("collapsedHeight");
-// });
-
 let widthMatch = window.matchMedia("(max-width: 500px)");
 // mm in the function arg is the matchMedia object, passed back into the function
+
+if (widthMatch.matches) {
+    // it matches the media query: that is, min-width is >= 500px
+    $(".censusInfo").addClass("collapsedHeight");
+
+    $(".censusInfo").click((element) => {
+        $(".censusInfo").toggleClass("collapsedHeight");
+    });
+
+    console.log("FirstFunction Small");
+} else {
+    $(".censusInfo").removeClass("collapsedHeight");
+    // $(".censusInfo").off("click");
+}
+
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
         // it matches the media query: that is, min-width is >= 500px
         $(".censusInfo").addClass("collapsedHeight");
 
-        $(".censusInfo").hover((element) => {
+        $(".censusInfo").click((element) => {
             $(".censusInfo").toggleClass("collapsedHeight");
         });
+
+        console.log("Inside change Listener: Small");
     } else {
-        // it no longer matches the media query
-        // remove the event listener
+        $(".censusInfo").removeClass("collapsedHeight");
+        $(".censusInfo").off("click");
     }
 });
