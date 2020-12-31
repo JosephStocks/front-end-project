@@ -22,6 +22,10 @@ const loadMap = (geojsonObject) => {
         center: [-95.36776743580762, 29.771805275841665],
         zoom: 10,
     });
+
+
+
+    
     var hoveredStateId = null;
     map.on("load", function () {
         map.addSource("neighborhood-outline-data", {
@@ -220,6 +224,62 @@ function closeNav() {
     document.getElementById("hamburger-button").classList.remove("invisible");
 }
 
-$(".censusInfo").hover((element) => {
-    $(".censusInfo").toggleClass("collapsedHeight");
-});
+// $(".censusInfo").hover((element) => {
+//     $(".censusInfo").toggleClass("collapsedHeight");
+// });
+
+// function resize(x) {
+//     if (x.matches) { // If media query matches
+//         $(".censusInfo").hover((element) => {
+//             $(".censusInfo").toggleClass("collapsedHeight");
+//         });    
+//     } else {
+//         $(".censusInfo").removeClass("collapsedHeight");
+//     }
+//   }
+
+//   var x = window.matchMedia("(max-width: 500px)")
+//   resize(x) // Call listener function at run time
+//   x.addEventListener(resize) // Attach listener function on state changes
+
+// const mediaQueryList = window.matchMedia("(max-width: 500px)");
+// if (mediaQueryList.matches) {
+//         $(".censusInfo").hover((element) => {
+//             $(".censusInfo").toggleClass("collapsedHeight");
+//         });  
+//     } else {
+//         $(".censusInfo").removeClass("collapsedHeight");
+// }
+
+// Create the query list.
+const mediaQueryList = window.matchMedia("(max-width: 500px)");
+
+// Run the orientation change handler once.
+handleResizeChange(mediaQueryList);
+
+// Add the callback function as a listener to the query list.
+mediaQueryList.addEventListener(handleResizeChange);
+
+function handleResizeChange(evt) {
+    if (evt.matches) {
+        $(".censusInfo").hover((element) => {
+            $(".censusInfo").toggleClass("collapsedHeight");
+        });      
+    } else {
+        $(".censusInfo").removeClass("collapsedHeight");
+    }   
+}
+// let widthMatch = window.matchMedia("(max-width: 500px)");
+// // mm in the function arg is the matchMedia object, passed back into the function
+// widthMatch.addEventListener("change", function (mm) {
+//     if (mm.matches) {
+//         // it matches the media query: that is, min-width is >= 500px
+//         $(".censusInfo").addClass("collapsedHeight");       
+//         $(".censusInfo").hover((element) => {
+//             $(".censusInfo").toggleClass("collapsedHeight");
+//         });
+//     } else {
+//         // it no longer matches the media query
+//         // remove the event listener
+//     }
+// });
