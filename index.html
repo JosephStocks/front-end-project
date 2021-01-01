@@ -16,58 +16,64 @@
 
 <body>
 
+
+
     <div class="topRow">
+
+
+        
         <div id="hamburger-button" class="col-2 invisible">
             <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
 
-<<<<<<< HEAD
-        <div class='censusInfo collapsedHeight invisible col-4 offset-7 text-truncate'>
-=======
         <div class='censusInfo invisible col-sm-3 offset-sm-7 text-truncate'>
->>>>>>> main
             <div class="title-wrapper">
                 <div id="areaName"></div>
             </div>
-            <div class="flex-line"><strong>Population: </strong><span class="right-align" id='totalPop'>0</span></div>
-            <div class="flex-line"><strong>Median Household Income: </strong><span class="right-align">$<span id='medianIncome'>0</span> USD</span></div>
-            <div class="flex-line"><strong>Median Age: </strong><span class="right-align" id='medianAge'>0</span></div>
-            <div><strong>Race Distribution: </strong>
+            <div class="showDataButton">Click here to show data</div>
+            <div class="data-wrapper">
+                <div class="flex-line"><strong>Population: </strong><span class="right-align" id='totalPop'>0</span></div>
+                <div class="flex-line"><strong>Median Household Income: </strong><span class="right-align">$<span id='medianIncome'>0</span> USD</span></div>
+                <div class="flex-line"><strong>Median Age: </strong><span class="right-align" id='medianAge'>0</span></div>
+                <div><strong>Race Distribution: </strong>
+                    <ul>
+                        <li class="flex-line">Total Count: <span class="right-align" id='totalRace'>0</span></li>
+                        <li class="flex-line">White: <span class="right-align" id='whitePop'>0</span></li>
+                        <li class="flex-line">Black/African American: <span class="right-align" id='blackPop'>0</span></li>
+                        <li class="flex-line">Asian: <span class="right-align" id='asianPop'>0</span></li>
+                        <li class="flex-line">American Indian: <span class="right-align" id='nativePop'>0</span></li>
+                        <li class="flex-line">Hawaiian/Pacific Islander: <span class="right-align" id='islanderPop'>0</span></li>
+                        <li class="flex-line">Other: <span class="right-align" id='otherPop'>0</span></li>
+                    </ul>
+                </div>
+                <div><strong>Education: </strong> <span id='edu'></span></div>
                 <ul>
-                    <li class="flex-line">Total Count: <span class="right-align" id='totalRace'>0</span></li>
-                    <li class="flex-line">White: <span class="right-align" id='whitePop'>0</span></li>
-                    <li class="flex-line">Black/African American: <span class="right-align" id='blackPop'>0</span></li>
-                    <li class="flex-line">Asian: <span class="right-align" id='asianPop'>0</span></li>
-                    <li class="flex-line">American Indian: <span class="right-align" id='nativePop'>0</span></li>
-                    <li class="flex-line">Hawaiian/Pacific Islander: <span class="right-align" id='islanderPop'>0</span></li>
-                    <li class="flex-line">Other: <span class="right-align" id='otherPop'>0</span></li>
+                    <li class="flex-line">Total Count: <span class="right-align" id='totalEdu'>0</span></li>
+                    <li class="flex-line">Below High School: <span class="right-align" id='belowHighschool'>0</span></li>
+                    <li class="flex-line">High School Equivalent: <span class="right-align" id='highSchoolEquiv'>0</span></li>
+                    <li class="flex-line">Some College: <span class="right-align" id='someCollege'>0</span></li>
+                    <li class="flex-line">Bachelors Degree: <span class="right-align" id='bachelors'>0</span></li>
+                    <li class="flex-line">Grad. Degree/Prof: <span class="right-align" id='graduateProf'>0</span>
+                    </li>
                 </ul>
             </div>
-            <div><strong>Education: </strong> <span id='edu'></span></div>
-            <ul>
-                <li class="flex-line">Total Count: <span class="right-align" id='totalEdu'>0</span></li>
-                <li class="flex-line">Below High School: <span class="right-align" id='belowHighschool'>0</span></li>
-                <li class="flex-line">High School Equivalent: <span class="right-align" id='highSchoolEquiv'>0</span></li>
-                <li class="flex-line">Some College: <span class="right-align" id='someCollege'>0</span></li>
-                <li class="flex-line">Bachelors Degree: <span class="right-align" id='bachelors'>0</span></li>
-<<<<<<< HEAD
-                <li class="flex-line">Graduate Degree/Professional: <span class="right-align" id='graduateProf'>0</span></li>
-=======
-                <li class="flex-line">Grad. Degree/Prof: <span class="right-align" id='graduateProf'>0</span>
-                </li>
->>>>>>> main
-            </ul>
         </div>
     </div>
-    <div id="mySidenav" class="sidenav">
-        <div class="link">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">ABOUT</a>
-            <a href="#">CONTACT</a>
-        </div>
-    </div>
-    <div id="map"></div>
 
+    <div id="map"></div>
+    
+    <div id="menu">
+        <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked"/>
+        <label for="streets-v11">streets</label>
+        <input id="light-v10" type="radio" name="rtoggle" value="light" />
+        <label for="light-v10">light</label>
+        <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+        <label for="dark-v10">dark</label>
+        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+        <label for="outdoors-v11">outdoors</label>
+        <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
+        <label for="satellite-v9">satellite</label>
+    </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"

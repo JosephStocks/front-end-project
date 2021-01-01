@@ -25,9 +25,8 @@ const loadMap = (geojsonObject) => {
 
 
 
-    
     var hoveredStateId = null;
-    map.on("load", function () {
+    let addLayers = map.on("styledata", function () {
         map.addSource("neighborhood-outline-data", {
             type: "geojson",
             data: {
@@ -46,7 +45,7 @@ const loadMap = (geojsonObject) => {
                 "fill-opacity": [
                     "case",
                     ["boolean", ["feature-state", "hover"], false],
-                    0.85,
+                    0.8,
                     0.5,
                 ],
             },
@@ -62,7 +61,7 @@ const loadMap = (geojsonObject) => {
                 "line-width": 2,
             },
         });
-
+    
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
         map.on("mousemove", "neighborhood-fills", function (e) {
@@ -87,6 +86,10 @@ const loadMap = (geojsonObject) => {
                 let convertedData = IdStatsObj[dataKey].map((element) =>
                     Number(element)
                 );
+
+
+
+
                 console.log(`converted Data: ${convertedData}`);
 
                 let [
@@ -108,6 +111,27 @@ const loadMap = (geojsonObject) => {
                     graduateProf,
                     totalEdu,
                 ] = convertedData;
+
+                // let [
+                //     totalPopT,
+                //     malePopT,
+                //     femalePopT,
+                //     medianAgeT,
+                //     medianIncomeT,
+                //     whitePopT,
+                //     blackPopT,
+                //     asianPopT,
+                //     nativePopT,
+                //     islanderPopT,
+                //     otherPopT,
+                //     belowHighschoolT,
+                //     highSchoolEquivT,
+                //     someCollegeT,
+                //     bachelorsT,
+                //     graduateProfT,
+                //     totalEduT,
+                // ] = convertedDataT;
+
 
                 console.log(`AreaName: ${areaName}`);
                 document.getElementById("areaName").textContent = areaName;
@@ -182,6 +206,7 @@ const loadMap = (geojsonObject) => {
                 document
                     .getElementsByClassName("censusInfo")[0]
                     .classList.remove("invisible");
+                    
             }
         });
 
@@ -201,7 +226,19 @@ const loadMap = (geojsonObject) => {
             hoveredStateId = null;
         });
     });
+
+    let layerList = document.getElementById('menu');
+    let inputs = layerList.getElementsByTagName('input');
+    function switchLayer(layer) {
+        let layerId = layer.target.id;
+        map.setStyle('mapbox://styles/mapbox/' + layerId);
+    }
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = switchLayer;
+    }
 };
+
+
 
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
@@ -211,48 +248,36 @@ const addIDtoEachMicroArea = (districtsArr) => {
     return districtsArr;
 };
 
-// EXPANDING/COLLAPSING SIDEBAR
-/* Set the width of the side navigation to 250px */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("hamburger-button").classList.add("invisible");
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("hamburger-button").classList.remove("invisible");
-}
-
 let widthMatch = window.matchMedia("(max-width: 500px)");
 // mm in the function arg is the matchMedia object, passed back into the function
-
-if (widthMatch.matches) {
+if (mm.matches) {
     // it matches the media query: that is, min-width is >= 500px
-    $(".censusInfo").addClass("collapsedHeight");
-
+    $(".data-wrapper").addClass("inactive");
+    $(".showDataButton").removeClass("inactive");    
     $(".censusInfo").click((element) => {
-        $(".censusInfo").toggleClass("collapsedHeight");
-    });
-
-    console.log("FirstFunction Small");
+        $(".data-wrapper").toggleClass("inactive");
+        $(".showDataButton").toggleClass("inactive");
+    });    
+    console.log("outside: Small");
 } else {
-    $(".censusInfo").removeClass("collapsedHeight");
-    // $(".censusInfo").off("click");
-}
+    $(".data-wrapper").removeClass("inactive");
+    $(".showDataButton").addClass("inactive");
+    $(".censusInfo").off("click");
+} 
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
         // it matches the media query: that is, min-width is >= 500px
-        $(".censusInfo").addClass("collapsedHeight");
-
+        $(".data-wrapper").addClass("inactive");
+        $(".showDataButton").removeClass("inactive");        
         $(".censusInfo").click((element) => {
-            $(".censusInfo").toggleClass("collapsedHeight");
-        });
-
+            $(".data-wrapper").toggleClass("inactive");
+            $(".showDataButton").toggleClass("inactive");
+        });        
         console.log("Inside change Listener: Small");
     } else {
-        $(".censusInfo").removeClass("collapsedHeight");
+        $(".data-wrapper").removeClass("inactive");
+        $(".showDataButton").addClass("inactive");
         $(".censusInfo").off("click");
     }
 });
