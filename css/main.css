@@ -49,10 +49,8 @@ ul {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.85);
   display: inline-block;
-}
-
-.censusInfo.collapsedHeight {
-  height: 100px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .title-wrapper {
@@ -75,6 +73,16 @@ ul {
   margin-bottom: 3px;
 }
 
+.expandDataMSG,
+.hideDataMSG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 li {
   margin-left: 0;
 }
@@ -95,6 +103,7 @@ li {
 
 .sidenav {
   height: 100%;
+  width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
