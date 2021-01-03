@@ -53,6 +53,7 @@ ul {
     font-family: sans-serif;
     padding: 10px;
     padding-top: 3px;
+    padding-bottom: 2px;
     /* width: 30%; */
     border: 2px solid black;
     font-size: 14px;
@@ -61,23 +62,19 @@ ul {
     background-color: rgba(255, 255, 255, 0.85);
     display: inline-block;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-    // &.collapsedHeight {
-    //     height: 100px;
-    // }
 }
 
 .title-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 50px;
 
     #areaName {
         width: 300px;
         display: inline-block;
-        min-height: 50px;
         max-width: 80%;
         text-decoration: underline;
-        // border: green solid 2px;
         text-align: center;
         white-space: normal;
         margin-bottom: 3px;
@@ -88,6 +85,10 @@ ul {
 .hideDataMSG {
     display: flex;
     justify-content: center;
+}
+
+.expandDataMSG {
+    margin-top: 3px;
 }
 
 li {
@@ -176,10 +177,6 @@ li {
         padding: 2rem;
         display: inline-block;
         right: 0px;
-
-        &.collapsedHeight {
-            height: 100px;
-        }
     }
 
     .title-wrapper {

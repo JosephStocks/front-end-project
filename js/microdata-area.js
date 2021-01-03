@@ -249,17 +249,16 @@ const addIDtoEachMicroArea = (districtsArr) => {
 };
 
 let widthMatch = window.matchMedia("(max-width: 500px)");
-// mm in the function arg is the matchMedia object, passed back into the function
-if (mm.matches) {
-    // it matches the media query: that is, min-width is >= 500px
+
+if (widthMatch.matches) {
     $(".expandDataMSG").show();
     $(".hideDataMSG").hide();
     $(".data-wrapper").hide();
 
     $(".censusInfo").click((element) => {
-        $(".data-wrapper").toggle();
-        $(".expandDataMSG").toggle();
+        $(".expandDataMSG").slideToggle(275);
         $(".hideDataMSG").toggle();
+        $(".data-wrapper").slideToggle(275);
     });
 
     console.log("FirstFunction Small");
@@ -267,25 +266,24 @@ if (mm.matches) {
     $(".data-wrapper").show();
     $(".expandDataMSG").hide();
     $(".hideDataMSG").hide();
+    $(".censusInfo").off("click");
 }
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
-        // it matches the media query: that is, min-width is >= 500px
         $(".expandDataMSG").show();
         $(".hideDataMSG").hide();
         $(".data-wrapper").hide();
 
         $(".censusInfo").click((element) => {
-            $(".data-wrapper").toggle();
-            $(".expandDataMSG").toggle();
+            $(".expandDataMSG").slideToggle(275);
             $(".hideDataMSG").toggle();
+            $(".data-wrapper").slideToggle(275);
         });
-
-        // console.log("FirstFunction Small");
     } else {
         $(".data-wrapper").show();
         $(".expandDataMSG").hide();
         $(".hideDataMSG").hide();
+        $(".censusInfo").off("click");
     }
 });
