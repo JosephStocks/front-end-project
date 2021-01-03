@@ -236,7 +236,6 @@ function handler2() {
 }
 $("#toggle-map").one("click", handler2);
 
-
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
         // districtJSON.id = districtJSON.properties.DISTRICT;
@@ -253,7 +252,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
     return districtsArr;
 };
 
-let widthMatch = window.matchMedia("(max-width: 500px)");
+let widthMatch = window.matchMedia("(max-width: 900px)");
 
 if (widthMatch.matches) {
     $(".expandDataMSG").show();
