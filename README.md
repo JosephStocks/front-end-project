@@ -4,7 +4,7 @@ Our project is a visual representation of US Census API data on a MapBox visual 
 The final product allows users to interactively hover/click on different areas of Houston and obtain certain Census data from those areas.
 We wanted to offer the ability to easily derive characterizing information of micro-areas within the two loops of the Houston.
 
-We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queries, and SASS (a CSS proprocessor).
+We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queries, and SASS (a CSS preprocessor).
 
 @@@Screenshots
 
