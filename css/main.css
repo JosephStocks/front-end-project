@@ -42,6 +42,7 @@ ul {
   font-family: sans-serif;
   padding: 10px;
   padding-top: 3px;
+  padding-bottom: 2px;
   /* width: 30%; */
   border: 2px solid black;
   font-size: 14px;
@@ -60,12 +61,15 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 50px;
 }
 
 .title-wrapper #areaName {
   width: 300px;
   display: inline-block;
-  min-height: 50px;
   max-width: 80%;
   text-decoration: underline;
   text-align: center;
@@ -81,6 +85,10 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.expandDataMSG {
+  margin-top: 3px;
 }
 
 li {
@@ -175,9 +183,6 @@ li {
     padding: 2rem;
     display: inline-block;
     right: 0px;
-  }
-  .censusInfo.collapsedHeight {
-    height: 100px;
   }
   .title-wrapper {
     display: -webkit-box;
