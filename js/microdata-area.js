@@ -221,34 +221,41 @@ function closeNav() {
 }
 
 let widthMatch = window.matchMedia("(max-width: 500px)");
-// mm in the function arg is the matchMedia object, passed back into the function
 
 if (widthMatch.matches) {
-    // it matches the media query: that is, min-width is >= 500px
-    $(".censusInfo").addClass("collapsedHeight");
+    $(".expandDataMSG").show();
+    $(".hideDataMSG").hide();
+    $(".data-wrapper").hide();
 
     $(".censusInfo").click((element) => {
-        $(".censusInfo").toggleClass("collapsedHeight");
+        $(".expandDataMSG").slideToggle();
+        $(".hideDataMSG").toggle();
+        $(".data-wrapper").slideToggle();
     });
 
     console.log("FirstFunction Small");
 } else {
-    $(".censusInfo").removeClass("collapsedHeight");
-    // $(".censusInfo").off("click");
+    $(".data-wrapper").show();
+    $(".expandDataMSG").hide();
+    $(".hideDataMSG").hide();
+    $(".censusInfo").off("click");
 }
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
-        // it matches the media query: that is, min-width is >= 500px
-        $(".censusInfo").addClass("collapsedHeight");
+        $(".expandDataMSG").show();
+        $(".hideDataMSG").hide();
+        $(".data-wrapper").hide();
 
         $(".censusInfo").click((element) => {
-            $(".censusInfo").toggleClass("collapsedHeight");
+            $(".expandDataMSG").slideToggle();
+            $(".hideDataMSG").toggle();
+            $(".data-wrapper").slideToggle();
         });
-
-        console.log("Inside change Listener: Small");
     } else {
-        $(".censusInfo").removeClass("collapsedHeight");
+        $(".data-wrapper").show();
+        $(".expandDataMSG").hide();
+        $(".hideDataMSG").hide();
         $(".censusInfo").off("click");
     }
 });

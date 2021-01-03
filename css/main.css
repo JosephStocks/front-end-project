@@ -42,6 +42,7 @@ ul {
   font-family: sans-serif;
   padding: 10px;
   padding-top: 3px;
+  padding-bottom: 2px;
   /* width: 30%; */
   border: 2px solid black;
   font-size: 14px;
@@ -49,10 +50,8 @@ ul {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.85);
   display: inline-block;
-}
-
-.censusInfo.collapsedHeight {
-  height: 100px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .title-wrapper {
@@ -62,17 +61,34 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 50px;
 }
 
 .title-wrapper #areaName {
   width: 300px;
   display: inline-block;
-  min-height: 50px;
   max-width: 80%;
   text-decoration: underline;
   text-align: center;
   white-space: normal;
   margin-bottom: 3px;
+}
+
+.expandDataMSG,
+.hideDataMSG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.expandDataMSG {
+  margin-top: 3px;
 }
 
 li {
@@ -95,6 +111,7 @@ li {
 
 .sidenav {
   height: 100%;
+  width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -166,9 +183,6 @@ li {
     padding: 2rem;
     display: inline-block;
     right: 0px;
-  }
-  .censusInfo.collapsedHeight {
-    height: 100px;
   }
   .title-wrapper {
     display: -webkit-box;
