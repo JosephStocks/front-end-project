@@ -112,27 +112,6 @@ const loadMap = (geojsonObject) => {
                     totalEdu,
                 ] = convertedData;
 
-                // let [
-                //     totalPopT,
-                //     malePopT,
-                //     femalePopT,
-                //     medianAgeT,
-                //     medianIncomeT,
-                //     whitePopT,
-                //     blackPopT,
-                //     asianPopT,
-                //     nativePopT,
-                //     islanderPopT,
-                //     otherPopT,
-                //     belowHighschoolT,
-                //     highSchoolEquivT,
-                //     someCollegeT,
-                //     bachelorsT,
-                //     graduateProfT,
-                //     totalEduT,
-                // ] = convertedDataT;
-
-
                 console.log(`AreaName: ${areaName}`);
                 document.getElementById("areaName").textContent = areaName;
                 document.getElementById(
