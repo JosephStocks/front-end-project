@@ -36,39 +36,46 @@
                 </div>
             </div>
             <div class="data-wrapper">
-                <div class="flex-line"><strong>Population: </strong><span class="right-align" id='totalPop'>0</span>
+                <div class="left-data">
+                    <div class="flex-line"><strong>Population: </strong><span class="right-align" id='totalPop'>0</span>
+                    </div>
+                    <div class="flex-line"><strong>Median Household Income: </strong><span class="right-align">$<span
+                                id='medianIncome'>0</span> USD</span></div>
+                    <div class="flex-line"><strong>Median Age: </strong><span class="right-align"
+                            id='medianAge'>0</span>
+                    </div>
+                    <div><strong>Race Distribution: </strong>
+                        <ul>
+                            <li class="flex-line">Total Count: <span class="right-align" id='totalRace'>0</span></li>
+                            <li class="flex-line">White: <span class="right-align" id='whitePop'>0</span></li>
+                            <li class="flex-line">Black/African American: <span class="right-align"
+                                    id='blackPop'>0</span>
+                            </li>
+                            <li class="flex-line">Asian: <span class="right-align" id='asianPop'>0</span></li>
+                            <li class="flex-line">American Indian: <span class="right-align" id='nativePop'>0</span>
+                            </li>
+                            <li class="flex-line">Hawaiian/Pacific Islander: <span class="right-align"
+                                    id='islanderPop'>0</span>
+                            </li>
+                            <li class="flex-line">Other: <span class="right-align" id='otherPop'>0</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="flex-line"><strong>Median Household Income: </strong><span class="right-align">$<span
-                            id='medianIncome'>0</span> USD</span></div>
-                <div class="flex-line"><strong>Median Age: </strong><span class="right-align" id='medianAge'>0</span>
-                </div>
-                <div><strong>Race Distribution: </strong>
+                <div class="right-data">
+                    <div><strong>Education: </strong> <span id='edu'></span></div>
                     <ul>
-                        <li class="flex-line">Total Count: <span class="right-align" id='totalRace'>0</span></li>
-                        <li class="flex-line">White: <span class="right-align" id='whitePop'>0</span></li>
-                        <li class="flex-line">Black/African American: <span class="right-align" id='blackPop'>0</span>
+                        <li class="flex-line">Total Count: <span class="right-align" id='totalEdu'>0</span></li>
+                        <li class="flex-line">Below High School: <span class="right-align" id='belowHighschool'>0</span>
                         </li>
-                        <li class="flex-line">Asian: <span class="right-align" id='asianPop'>0</span></li>
-                        <li class="flex-line">American Indian: <span class="right-align" id='nativePop'>0</span></li>
-                        <li class="flex-line">Hawaiian/Pacific Islander: <span class="right-align"
-                                id='islanderPop'>0</span>
+                        <li class="flex-line">High School Equivalent: <span class="right-align"
+                                id='highSchoolEquiv'>0</span>
                         </li>
-                        <li class="flex-line">Other: <span class="right-align" id='otherPop'>0</span></li>
+                        <li class="flex-line">Some College: <span class="right-align" id='someCollege'>0</span></li>
+                        <li class="flex-line">Bachelors Degree: <span class="right-align" id='bachelors'>0</span></li>
+                        <li class="flex-line">Grad. Degree/Prof: <span class="right-align" id='graduateProf'>0</span>
+                        </li>
                     </ul>
                 </div>
-                <div><strong>Education: </strong> <span id='edu'></span></div>
-                <ul>
-                    <li class="flex-line">Total Count: <span class="right-align" id='totalEdu'>0</span></li>
-                    <li class="flex-line">Below High School: <span class="right-align" id='belowHighschool'>0</span>
-                    </li>
-                    <li class="flex-line">High School Equivalent: <span class="right-align"
-                            id='highSchoolEquiv'>0</span>
-                    </li>
-                    <li class="flex-line">Some College: <span class="right-align" id='someCollege'>0</span></li>
-                    <li class="flex-line">Bachelors Degree: <span class="right-align" id='bachelors'>0</span></li>
-                    <li class="flex-line">Grad. Degree/Prof: <span class="right-align" id='graduateProf'>0</span>
-                    </li>
-                </ul>
             </div>
 
             <div class="hideDataMSG">
@@ -79,7 +86,7 @@
                 </svg>
             </div>
         </div>
-        
+
     </div>
 
     <div id="map"></div>

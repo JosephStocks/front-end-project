@@ -270,6 +270,24 @@ a.active-text {
   text-shadow: 0 0 15px rgba(91, 148, 194, 0.5) !important;
 }
 
+@media all and (min-width: 600px) and (max-width: 799px) {
+  .data-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .left-data,
+  .right-data {
+    width: 45%;
+  }
+}
+
 @media all and (min-width: 800px) {
   .censusInfo {
     position: absolute;
