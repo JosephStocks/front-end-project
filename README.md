@@ -57,7 +57,7 @@ const pullSchoolAndLoad = () => {
 // loadMap is loaded and district-defining layers are added afterwards
 const loadMap = (geojsonObject, propertyIDName, dataObject) => {
     mapboxgl.accessToken =
-        "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
+        "ACCESSTOKEN";
     var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
