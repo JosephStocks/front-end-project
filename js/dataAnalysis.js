@@ -21,6 +21,7 @@ let microAreaIds = [
 ];
 
 let IdStatsObj = {};
+let IdStatsObjT = {};
 
 var censusCodeArr = [
     {
@@ -144,3 +145,15 @@ $.getJSON(
     });
     console.log(harrisCountyAreasArr);
 });
+
+// $.getJSON(
+//     `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
+// ).done((data) => {
+//     let texasArr;
+//     texasArr = data;
+//     texasArr.forEach((arr) => {
+//         let tempId = arr.slice(-1)[0];
+//         IdStatsObjT[tempId] = arr.slice(0, -1);
+//     });
+//     console.log(IdStatsObjT);
+// });

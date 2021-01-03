@@ -4,6 +4,20 @@ body {
     background-color: rgb(44, 44, 44);
 }
 
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+#menu {
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 ul {
     margin: 1px;
     // padding: 0;
@@ -147,7 +161,7 @@ li {
     z-index: -100;
 }
 
-@media all and (min-width: 500px) {
+@media all and (min-width: 360px) {
     .censusInfo {
         position: absolute;
         font-family: sans-serif;
@@ -190,5 +204,9 @@ li {
     .right-align {
         display: inline-block;
         width: 140px;
+    }
+    
+    .inactive {
+        display: none !important;
     }
 }
