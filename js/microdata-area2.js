@@ -1,38 +1,34 @@
-const pullSchoolAndLoad = () => {
-    $.getJSON(
-        "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/school-district-_unified_.json"
-    ).done((data) => {
-        console.log(data);
-        let schoolAreasArr = data.features;
-        console.log(schoolAreasArr);
-        schoolAreasArr = addIDtoEachSchoolDistrict(schoolAreasArr);
+$.getJSON(
+    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/school-district-_unified_.json"
+).done((data) => {
+    console.log(data);
+    let schoolAreasArr = data.features;
+    console.log(schoolAreasArr);
+    schoolAreasArr = addIDtoEachSchoolDistrict(schoolAreasArr);
 
-        schoolAreasArr = schoolAreasArr.filter((microDataObj) => {
-            return schoolIds.includes(microDataObj.properties.UNSDLEA);
-        });
-
-        loadMap(schoolAreasArr, "NAME", IdStatsObjS);
+    schoolAreasArr = schoolAreasArr.filter((microDataObj) => {
+        return schoolIds.includes(microDataObj.properties.UNSDLEA);
     });
-};
 
-const pullMicroAndLoad = () => {
-    $.getJSON(
-        "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
-    ).done((data) => {
-        console.log(data);
-        let microdataAreasArr = data.features;
-        console.log(microdataAreasArr);
-        microdataAreasArr = addIDtoEachMicroArea(microdataAreasArr);
+    loadMap(schoolAreasArr);
+});
 
-        harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
-            return microAreaIds.includes(microDataObj.properties.PUMACE10);
-        });
+$.getJSON(
+    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/public-use-microdata-area.json"
+).done((data) => {
+    console.log(data);
+    let microdataAreasArr = data.features;
+    console.log(microdataAreasArr);
+    microdataAreasArr = addIDtoEachMicroArea(microdataAreasArr);
 
-        loadMap(harrisCountyAreasArr, "NAME10", IdStatsObj);
+    harrisCountyAreasArr = microdataAreasArr.filter((microDataObj) => {
+        return microAreaIds.includes(microDataObj.properties.PUMACE10);
     });
-};
 
-const loadMap = (geojsonObject, propertyIDName, dataObject) => {
+    loadMap(harrisCountyAreasArr);
+});
+
+const loadMap = (geojsonObject) => {
     mapboxgl.accessToken =
         "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
     var map = new mapboxgl.Map({
@@ -44,6 +40,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
 
     var hoveredStateId = null;
     map.on("load", function () {
+    
         map.addSource("neighborhood-outline-data", {
             type: "geojson",
             data: {
@@ -78,7 +75,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                 "line-width": 2,
             },
         });
-
+    
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
         map.on("mousemove", "neighborhood-fills", function (e) {
@@ -97,12 +94,17 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
 
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
-                console.log(dataObject[dataKey]);
+                console.log(IdStatsObjS[dataKey]);
 
-                let areaName = targetObj.properties[propertyIDName];
-                let convertedData = dataObject[dataKey].map((element) =>
+                let areaName = targetObj.properties.NAME;
+                let convertedData = IdStatsObjS[dataKey].map((element) =>
                     Number(element)
                 );
+
+                // let areaName = targetObj.properties.NAME10;
+                // let convertedData = IdStatsObj[dataKey].map((element) =>
+                //     Number(element)
+                // );
 
                 console.log(`converted Data: ${convertedData}`);
 
@@ -199,6 +201,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                 document
                     .getElementsByClassName("censusInfo")[0]
                     .classList.remove("invisible");
+                    
             }
         });
 
@@ -220,21 +223,6 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
     });
 };
 
-pullMicroAndLoad();
-
-// pullSchoolAndLoad();
-
-function handler1() {
-    //alert('First handler: ' + $(this).text());
-    pullMicroAndLoad();
-    $(this).one("click", handler2);
-}
-function handler2() {
-    //alert('Second handler: ' + $(this).text());
-    pullSchoolAndLoad();
-    $(this).one("click", handler1);
-}
-$("#toggle-map").one("click", handler2);
 
 
 const addIDtoEachMicroArea = (districtsArr) => {
@@ -253,7 +241,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
     return districtsArr;
 };
 
-let widthMatch = window.matchMedia("(max-width: 800px)");
+let widthMatch = window.matchMedia("(max-width: 500px)");
 
 if (widthMatch.matches) {
     $(".expandDataMSG").show();
