@@ -1,4 +1,5 @@
-# Front End Project
+# CensusMap
+## censusmap.netlify.app
 
 Our project is a visual representation of US Census API data on a MapBox visual API.
 The final product allows users to interactively hover/click on different areas of Houston and obtain certain Census data from those areas.
@@ -20,8 +21,8 @@ API Reference
 @@@If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
 
 Credits:
-  @JoesephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
-  @LayneMag: Handled the majority of the navigation toggle implementation, worked with Matthew to comb for the necessary Census information/implementation, and
+ *@JoesephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
+ *@LayneMag: Handled the majority of the navigation toggle implementation, worked with Matthew to comb for the necessary Census information/implementation, and
              handled most styling.
-  Matthew Chun: Worked on Census data implementation with Joe and Layne, aided Joe in creating a working interactive Census table, and worked with Layne in
+ *Matthew Chun: Worked on Census data implementation with Joe and Layne, aided Joe in creating a working interactive Census table, and worked with Layne in
              adding toggle functionality between micro-data areas and school districts.
