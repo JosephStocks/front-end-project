@@ -239,7 +239,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
     return districtsArr;
 };
 
-let widthMatch = window.matchMedia("(max-width: 500px)");
+let widthMatch = window.matchMedia("(max-width: 800px)");
 
 if (widthMatch.matches) {
     $(".expandDataMSG").show();
