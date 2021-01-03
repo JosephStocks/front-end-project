@@ -1,3 +1,17 @@
+let schoolIds = [
+    "07710",
+    "07830",
+    "16110",
+    "16530",
+    "20250",
+    "23640",
+    "23910",
+    "25740",
+    "34320",
+    "39990",
+    "41100",
+];
+
 let microAreaIds = [
     "04601",
     "04602",
@@ -21,7 +35,7 @@ let microAreaIds = [
 ];
 
 let IdStatsObj = {};
-let IdStatsObjT = {};
+let IdStatsObjS = {};
 
 var censusCodeArr = [
     {
@@ -146,14 +160,17 @@ $.getJSON(
     console.log(harrisCountyAreasArr);
 });
 
-// $.getJSON(
-//     `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
-// ).done((data) => {
-//     let texasArr;
-//     texasArr = data;
-//     texasArr.forEach((arr) => {
-//         let tempId = arr.slice(-1)[0];
-//         IdStatsObjT[tempId] = arr.slice(0, -1);
-//     });
-//     console.log(IdStatsObjT);
-// });
+$.getJSON(
+    `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=school%20district%20(unified):*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
+).done((data) => {
+    let schoolDistArr;
+    // Filters all state areas down to just Houston areas
+    schoolDistArr = data.filter((microDataArr) => {
+        return schoolIds.includes(microDataArr.slice(-1)[0]);
+    });
+    schoolDistArr.forEach((arr) => {
+        let tempId = arr.slice(-1)[0];
+        IdStatsObjS[tempId] = arr.slice(1, -1);
+    });
+    console.log(schoolDistArr);
+});
