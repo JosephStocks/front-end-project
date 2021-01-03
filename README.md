@@ -66,8 +66,8 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
 ```    
 
 API References:
-* @[MapBox Documentation](https://docs.mapbox.com/)
-* @[US Census available API](https://www.census.gov/data/developers/data-sets.html)
+* [MapBox Documentation](https://docs.mapbox.com/)
+* [US Census available API](https://www.census.gov/data/developers/data-sets.html)
 
 Credits:
 * @JoesephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
