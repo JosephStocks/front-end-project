@@ -6,5 +6,9 @@
             "savePath": "/css/"
         }
     ],
-    "liveSassCompile.settings.generateMap": false
+    "liveSassCompile.settings.generateMap": false,
+    "[scss]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter":"esbenp.prettier-vscode",
+    },
 }

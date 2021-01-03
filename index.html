@@ -8,10 +8,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/168dc50799.js" crossorigin="anonymous"></script>
     <link href="css/main.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div class="topRow">
 
 
-        
+
         <div id="hamburger-button" class="col-2 invisible">
             <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
@@ -86,9 +86,19 @@
     </div>
 
     <div id="map"></div>
-    
-    <div id="menu">
-        <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked"/>
+
+    <div class="buttons-container selector">
+        <ul>
+            <li class="mapView active"><a href="#" class="active-text"><i class="fas fa-map-marked"
+                        aria-hidden="true"></i></a></li>
+            <li class="mapView"><a href="#"><i class="fas fa-road" aria-hidden="true"></i></a></li>
+            <li class="mapView"><a href="#"><i class="fas fa-satellite" aria-hidden="true"></i></a></li>
+            <li class="mapView"><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- <div id="mapViewOptions">
+        <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked" />
         <label for="streets-v11">streets</label>
         <input id="light-v10" type="radio" name="rtoggle" value="light" />
         <label for="light-v10">light</label>
@@ -98,7 +108,7 @@
         <label for="outdoors-v11">outdoors</label>
         <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
         <label for="satellite-v9">satellite</label>
-    </div>
+    </div> -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
