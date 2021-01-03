@@ -22,7 +22,7 @@ API Reference
 
 Credits:
 * @JoesephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
-* @LayneMag: Handled the majority of the navigation toggle implementation, worked with Matthew to comb for the necessary Census information/implementation, and
+* @laynemag: Handled the majority of the navigation toggle implementation, worked with Matthew to comb for the necessary Census information/implementation, and
              handled most styling.
 * Matthew Chun: Worked on Census data implementation with Joe and Layne, aided Joe in creating a working interactive Census table, and worked with Layne in
              adding toggle functionality between micro-data areas and school districts.
