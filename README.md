@@ -13,9 +13,9 @@ code ex.
 ```
 // the following is fetching the selected census data using pre-selected area IDs correlated to the census data
 // example IDs; 
-let microAreaIds = [
-    "04601",
-    "04602",
+let schoolIds = [
+    "07710",
+    "07830",
     ...
     
 $.getJSON(
