@@ -7,8 +7,6 @@ We wanted to offer the ability to easily derive characterizing information of mi
 
 We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queries, and SASS (a CSS preprocessor).
 
-@@@Screenshots
-
 Features incude: Navigation toggle, district toggle, zoom capability, hover/click information view.
 
 code ex.
