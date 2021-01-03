@@ -36,20 +36,23 @@ $.getJSON(
 });
 
 // the previously derived data is loaded into the MapBox API here with loadmap(...);
-$.getJSON(
-    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/school-district-_unified_.json"
-).done((data) => {
-    console.log(data);
-    let schoolAreasArr = data.features;
-    console.log(schoolAreasArr);
-    schoolAreasArr = addIDtoEachSchoolDistrict(schoolAreasArr);
+const pullSchoolAndLoad = () => {
+    $.getJSON(
+        "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/school-district-_unified_.json"
+    ).done((data) => {
+        console.log(data);
+        let schoolAreasArr = data.features;
+        console.log(schoolAreasArr);
+        schoolAreasArr = addIDtoEachSchoolDistrict(schoolAreasArr);
 
-    schoolAreasArr = schoolAreasArr.filter((microDataObj) => {
-        return schoolIds.includes(microDataObj.properties.UNSDLEA);
+        schoolAreasArr = schoolAreasArr.filter((microDataObj) => {
+            return schoolIds.includes(microDataObj.properties.UNSDLEA);
+        });
+
+        loadMap(schoolAreasArr, "NAME", IdStatsObjS);
     });
+};
 
-    loadMap(schoolAreasArr);
-});
 
 // loadMap is loaded and district-defining layers are added afterwards
 const loadMap = (geojsonObject, propertyIDName, dataObject) => {
