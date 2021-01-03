@@ -259,3 +259,13 @@ widthMatch.addEventListener("change", function (mm) {
         $(".censusInfo").off("click");
     }
 });
+
+// let layerList = document.getElementById('mapViewOptions');
+// let inputs = layerList.getElementsByTagName('input');
+// function switchLayer(layer) {
+//     let layerId = layer.target.id;
+//     map.setStyle('mapbox://styles/mapbox/' + layerId);
+// }
+// for (var i = 0; i < inputs.length; i++) {
+//     inputs[i].onclick = switchLayer;
+// }
