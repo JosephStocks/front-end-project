@@ -60,10 +60,11 @@ ul {
     border-radius: 3px;
     background-color: rgba(255, 255, 255, 0.85);
     display: inline-block;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-    &.collapsedHeight {
-        height: 100px;
-    }
+    // &.collapsedHeight {
+    //     height: 100px;
+    // }
 }
 
 .title-wrapper {
@@ -83,6 +84,12 @@ ul {
     }
 }
 
+.expandDataMSG,
+.hideDataMSG {
+    display: flex;
+    justify-content: center;
+}
+
 li {
     margin-left: 0;
 }
@@ -99,7 +106,7 @@ li {
 
 .sidenav {
     height: 100%; // 100% Full-height
-    // width: 0; 0 width - change this with JavaScript
+    width: 0; //0 width - change this with JavaScript
     position: fixed; // Stay in place
     z-index: 1; // Stay on top
     top: 0; // Stay at the top

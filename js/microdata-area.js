@@ -252,32 +252,40 @@ let widthMatch = window.matchMedia("(max-width: 500px)");
 // mm in the function arg is the matchMedia object, passed back into the function
 if (mm.matches) {
     // it matches the media query: that is, min-width is >= 500px
-    $(".data-wrapper").addClass("inactive");
-    $(".showDataButton").removeClass("inactive");    
+    $(".expandDataMSG").show();
+    $(".hideDataMSG").hide();
+    $(".data-wrapper").hide();
+
     $(".censusInfo").click((element) => {
-        $(".data-wrapper").toggleClass("inactive");
-        $(".showDataButton").toggleClass("inactive");
-    });    
-    console.log("outside: Small");
+        $(".data-wrapper").toggle();
+        $(".expandDataMSG").toggle();
+        $(".hideDataMSG").toggle();
+    });
+
+    console.log("FirstFunction Small");
 } else {
-    $(".data-wrapper").removeClass("inactive");
-    $(".showDataButton").addClass("inactive");
-    $(".censusInfo").off("click");
-} 
+    $(".data-wrapper").show();
+    $(".expandDataMSG").hide();
+    $(".hideDataMSG").hide();
+}
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
         // it matches the media query: that is, min-width is >= 500px
-        $(".data-wrapper").addClass("inactive");
-        $(".showDataButton").removeClass("inactive");        
+        $(".expandDataMSG").show();
+        $(".hideDataMSG").hide();
+        $(".data-wrapper").hide();
+
         $(".censusInfo").click((element) => {
-            $(".data-wrapper").toggleClass("inactive");
-            $(".showDataButton").toggleClass("inactive");
-        });        
-        console.log("Inside change Listener: Small");
+            $(".data-wrapper").toggle();
+            $(".expandDataMSG").toggle();
+            $(".hideDataMSG").toggle();
+        });
+
+        // console.log("FirstFunction Small");
     } else {
-        $(".data-wrapper").removeClass("inactive");
-        $(".showDataButton").addClass("inactive");
-        $(".censusInfo").off("click");
+        $(".data-wrapper").show();
+        $(".expandDataMSG").hide();
+        $(".hideDataMSG").hide();
     }
 });
