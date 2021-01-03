@@ -220,8 +220,22 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
     });
 };
 
-// pullSchoolAndLoad();
 pullMicroAndLoad();
+
+// pullSchoolAndLoad();
+
+function handler1() {
+    //alert('First handler: ' + $(this).text());
+    pullMicroAndLoad();
+    $(this).one("click", handler2);
+}
+function handler2() {
+    //alert('Second handler: ' + $(this).text());
+    pullSchoolAndLoad();
+    $(this).one("click", handler1);
+}
+$("#toggle-map").one("click", handler2);
+
 
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
