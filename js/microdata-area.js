@@ -228,9 +228,9 @@ if (widthMatch.matches) {
     $(".data-wrapper").hide();
 
     $(".censusInfo").click((element) => {
-        $(".expandDataMSG").slideToggle();
+        $(".expandDataMSG").slideToggle(275);
         $(".hideDataMSG").toggle();
-        $(".data-wrapper").slideToggle();
+        $(".data-wrapper").slideToggle(275);
     });
 
     console.log("FirstFunction Small");
@@ -248,9 +248,9 @@ widthMatch.addEventListener("change", function (mm) {
         $(".data-wrapper").hide();
 
         $(".censusInfo").click((element) => {
-            $(".expandDataMSG").slideToggle();
+            $(".expandDataMSG").slideToggle(275);
             $(".hideDataMSG").toggle();
-            $(".data-wrapper").slideToggle();
+            $(".data-wrapper").slideToggle(275);
         });
     } else {
         $(".data-wrapper").show();
