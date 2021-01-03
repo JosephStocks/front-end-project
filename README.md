@@ -15,18 +15,18 @@ Features incude: Navigation toggle, district toggle, zoom capability, hover/clic
 how your project solves their problem by looking at the code example.
 Make sure the API you are showing off is obvious, and that your code is short and concise.
 
-// the following is fetching the selected census data using pre-selected area IDs correlated to the census data
-// example ID; 
-let microAreaIds = [
-    "04601",
-    "04602",
-    ...
-    
-$.getJSON(
-    `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=school%20district%20(unified):*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
-).done((data) => {
-    let schoolDistArr;
-    // Filters all state areas down to just Houston areas
+@// the following is fetching the selected census data using pre-selected area IDs correlated to the census data
+@// example ID; 
+@let microAreaIds = [
+@    "04601",
+@    "04602",
+@    ...
+@    
+@$.getJSON(
+@    `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=school%20district%20(unified):*&in=state:48&@key=edf70f15a37d771191e6f4d62aab1871d9182206`
+@).done((data) => {
+@    let schoolDistArr;
+@    // Filters all state areas down to just Houston areas
     schoolDistArr = data.filter((microDataArr) => {
         return schoolIds.includes(microDataArr.slice(-1)[0]);
     });
