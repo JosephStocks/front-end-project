@@ -15,6 +15,57 @@ Features incude: Navigation toggle, district toggle, zoom capability, hover/clic
 how your project solves their problem by looking at the code example.
 Make sure the API you are showing off is obvious, and that your code is short and concise.
 
+// the following is fetching the selected census data using pre-selected area IDs correlated to the census data
+// example ID; 
+let microAreaIds = [
+    "04601",
+    "04602",
+    ...
+    
+$.getJSON(
+    `https://api.census.gov/data/2019/acs/acs5?get=NAME,${codeArrStr}&for=school%20district%20(unified):*&in=state:48&key=edf70f15a37d771191e6f4d62aab1871d9182206`
+).done((data) => {
+    let schoolDistArr;
+    // Filters all state areas down to just Houston areas
+    schoolDistArr = data.filter((microDataArr) => {
+        return schoolIds.includes(microDataArr.slice(-1)[0]);
+    });
+    schoolDistArr.forEach((arr) => {
+        let tempId = arr.slice(-1)[0];
+        IdStatsObjS[tempId] = arr.slice(1, -1);
+    });
+    console.log(schoolDistArr);
+});
+
+// the previously derived data is loaded into the MapBox API here with loadmap(...);
+$.getJSON(
+    "https://raw.githubusercontent.com/uscensusbureau/citysdk/master/v2/GeoJSON/500k/2019/48/school-district-_unified_.json"
+).done((data) => {
+    console.log(data);
+    let schoolAreasArr = data.features;
+    console.log(schoolAreasArr);
+    schoolAreasArr = addIDtoEachSchoolDistrict(schoolAreasArr);
+
+    schoolAreasArr = schoolAreasArr.filter((microDataObj) => {
+        return schoolIds.includes(microDataObj.properties.UNSDLEA);
+    });
+
+    loadMap(schoolAreasArr);
+});
+
+// loadMap is loaded and district-defining layers are added afterwards
+const loadMap = (geojsonObject, propertyIDName, dataObject) => {
+    mapboxgl.accessToken =
+        "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
+    var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-95.36776743580762, 29.771805275841665],
+        zoom: 10,
+    });
+    ... layers ...
+    ... census box textContent ...
+    
 @@@Provide step by step series of examples and explanations about how to get a development env running.
 API Reference
 
