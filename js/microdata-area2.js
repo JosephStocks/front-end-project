@@ -94,16 +94,17 @@ const loadMap = (geojsonObject) => {
 
                 hoveredStateId = e.features[0].id;
                 let dataKey = hoveredStateId.toString().padStart(5, "0");
+                console.log(IdStatsObjS[dataKey]);
 
                 let areaName = targetObj.properties.NAME;
                 let convertedData = IdStatsObjS[dataKey].map((element) =>
                     Number(element)
                 );
 
-                let areaName = targetObj.properties.NAME10;
-                let convertedData = IdStatsObj[dataKey].map((element) =>
-                    Number(element)
-                );
+                // let areaName = targetObj.properties.NAME10;
+                // let convertedData = IdStatsObj[dataKey].map((element) =>
+                //     Number(element)
+                // );
 
                 console.log(`converted Data: ${convertedData}`);
 
@@ -232,12 +233,12 @@ const addIDtoEachMicroArea = (districtsArr) => {
     return districtsArr;
 };
 
-const addIDtoEachSchoolDistrict = (schoolsArr) => {
-    for (const districtJSON of schoolsArr) {
+const addIDtoEachSchoolDistrict = (districtsArr) => {
+    for (const districtJSON of districtsArr) {
         // districtJSON.id = districtJSON.properties.DISTRICT;
         districtJSON.id = districtJSON.properties.UNSDLEA;
     }
-    return schoolsArr;
+    return districtsArr;
 };
 
 let widthMatch = window.matchMedia("(max-width: 500px)");
