@@ -1,3 +1,5 @@
+<img align="right" width="33%" src="https://user-images.githubusercontent.com/26754072/103553199-bc75b100-4e72-11eb-9e88-8ad324e6dfcc.gif" />
+
 # CensusMap
 ## censusmap.netlify.app
 
@@ -8,14 +10,11 @@ We wanted to offer the ability to easily derive characterizing information of mi
 We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queries, and SASS (a CSS preprocessor).
 
 Features incude: Navigation toggle, district toggle, zoom capability, hover/click information view.
+<div>
+<img width="95%" src="https://user-images.githubusercontent.com/67352060/103552560-b8955f00-4e71-11eb-9b2b-ce62425a4753.gif" />
+ </div>
 
-![censusmap](https://user-images.githubusercontent.com/67352060/103552560-b8955f00-4e71-11eb-9b2b-ce62425a4753.gif)
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26754072/103553199-bc75b100-4e72-11eb-9e88-8ad324e6dfcc.gif" />
-</p>
-
-code ex.
+Code Snippet
 ```
 // the following is fetching the selected census data using pre-selected area IDs correlated to the census data
 // example IDs; 
@@ -71,6 +70,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
     ... layers ...
     ... census box textContent ...
 ```    
+
 
 API References:
 * [MapBox Documentation](https://docs.mapbox.com/)
