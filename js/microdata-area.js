@@ -255,6 +255,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
 let widthMatch = window.matchMedia("(max-width: 900px)");
 
 if (widthMatch.matches) {
+    $(".censusInfo").off("click");
     $(".expandDataMSG").show();
     $(".hideDataMSG").hide();
     $(".data-wrapper").hide();
@@ -304,6 +305,7 @@ if (widthMatch.matches) {
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
+        $(".censusInfo").off("click");
         $(".expandDataMSG").show();
         $(".hideDataMSG").hide();
         $(".data-wrapper").hide();

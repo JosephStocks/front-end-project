@@ -129,7 +129,7 @@ li {
 
 .right-align {
   display: inline-block;
-  width: 110px;
+  width: 130px;
 }
 
 .sidenav {
@@ -362,6 +362,10 @@ a.active-text {
   .left-data,
   .right-data {
     width: 45%;
+  }
+  .right-align {
+    display: inline-block;
+    width: 115px;
   }
 }
 
