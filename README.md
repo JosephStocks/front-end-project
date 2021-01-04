@@ -9,7 +9,7 @@ We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queri
 
 Features incude: Navigation toggle, district toggle, zoom capability, hover/click information view.
 
-!(https://imgur.com/a/kOgpoeX)
+![Demonstration](https://imgur.com/a/kOgpoeX)
 
 code ex.
 ```
