@@ -11,6 +11,8 @@ Features incude: Navigation toggle, district toggle, zoom capability, hover/clic
 
 ![censusmap](https://user-images.githubusercontent.com/67352060/103552560-b8955f00-4e71-11eb-9b2b-ce62425a4753.gif)
 
+![censusmapmobile](https://user-images.githubusercontent.com/26754072/103553199-bc75b100-4e72-11eb-9e88-8ad324e6dfcc.gif)
+
 code ex.
 ```
 // the following is fetching the selected census data using pre-selected area IDs correlated to the census data
