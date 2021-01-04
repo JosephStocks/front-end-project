@@ -131,8 +131,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                 document.getElementById(
                     "totalPop"
                 ).textContent = totalPop.toLocaleString();
-                // document.getElementById("malePop").textContent = malePop;
-                // document.getElementById("femalePop").textContent = femalePop;
+
                 document.getElementById("medianAge").textContent = medianAge;
                 document.getElementById(
                     "medianIncome"
@@ -189,8 +188,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                     (graduateProf / totalEdu) *
                     100
                 ).toFixed(2)}% (${graduateProf.toLocaleString()})`;
-                // console.log(hoveredStateId, targetObj.properties.PUMACE10);
-                // hoveredStateId = e.features[0].properties.DISTRICT;
+
                 map.setFeatureState(
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: true }
@@ -210,10 +208,6 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: false }
                 );
-                // hides the data div when not on the highlighted district
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.add("invisible");
             }
             hoveredStateId = null;
         });
@@ -222,15 +216,11 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
 
 pullMicroAndLoad();
 
-// pullSchoolAndLoad();
-
 function handler1() {
-    //alert('First handler: ' + $(this).text());
     pullMicroAndLoad();
     $(this).one("click", handler2);
 }
 function handler2() {
-    //alert('Second handler: ' + $(this).text());
     pullSchoolAndLoad();
     $(this).one("click", handler1);
 }
@@ -238,7 +228,6 @@ $(".toggle-map").one("click", handler2);
 
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
-        // districtJSON.id = districtJSON.properties.DISTRICT;
         districtJSON.id = districtJSON.properties.PUMACE10;
     }
     return districtsArr;
@@ -246,7 +235,6 @@ const addIDtoEachMicroArea = (districtsArr) => {
 
 const addIDtoEachSchoolDistrict = (districtsArr) => {
     for (const districtJSON of districtsArr) {
-        // districtJSON.id = districtJSON.properties.DISTRICT;
         districtJSON.id = districtJSON.properties.UNSDLEA;
     }
     return districtsArr;
@@ -284,6 +272,7 @@ if (widthMatch.matches) {
     $(".expandDataMSG").hide();
     $(".hideDataMSG").hide();
     $(".censusInfo").off("click");
+    $(".bottomnav").off("click");
 
     $(".sidenav").click((element) => {
         var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
@@ -334,6 +323,7 @@ widthMatch.addEventListener("change", function (mm) {
         $(".expandDataMSG").hide();
         $(".hideDataMSG").hide();
         $(".censusInfo").off("click");
+        $(".bottomnav").off("click");
 
         $(".sidenav").click((element) => {
             var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
