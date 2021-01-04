@@ -33,8 +33,6 @@ body {
 
 ul {
     margin: 1px;
-    // padding: 0;
-    // white-space: normal;
 }
 
 .topRow {
@@ -42,11 +40,6 @@ ul {
     flex-direction: column;
 }
 
-// #hamburger-button {
-//     transition: 5s;
-// }
-
-// The button used to open the sidebar
 .openbtn {
     font-size: 25px;
     cursor: pointer;
@@ -68,7 +61,6 @@ ul {
     padding: 10px;
     padding-top: 3px;
     padding-bottom: 2px;
-    /* width: 30%; */
     border: 2px solid black;
     font-size: 14px;
     color: black;
@@ -120,17 +112,17 @@ li {
 }
 
 .sidenav {
-    height: 100%; // 100% Full-height
-    // width: 0; //0 width - change this with JavaScript
+    height: 100%;
+    // width: 0;
     width: 0px;
-    position: fixed; // Stay in place
-    z-index: 200; // Stay on top
-    top: 0; // Stay at the top
+    position: fixed;
+    z-index: 200;
+    top: 0;
     left: 0;
     background-color: rgb(17, 17, 17);
-    overflow-x: hidden; // Disable horizontal scroll
+    overflow-x: hidden;
 
-    transition: 0.3s; // 0.5 second transition effect to slide in the sidenav
+    transition: 0.3s;
 
     a {
         padding: 8px 8px 8px 32px;
@@ -243,17 +235,13 @@ a.active-text {
 }
 
 .bottomnav {
-    // height: 30px;
-    // width: 0; //0 width - change this with JavaScript
     width: 100%;
-    position: fixed; // Stay in place
-    z-index: 200; // Stay on top
-    bottom: 0; // Stay at the top
-    // left: 0;
+    position: fixed;
+    z-index: 200;
+    bottom: 0;
     background-color: rgb(17, 17, 17);
-    // overflow-x: hidden; // Disable horizontal scroll
 
-    transition: 0.3s; // 0.5 second transition effect to slide in the sidenav
+    transition: 0.3s;
 
     a {
         padding: 8px 8px 8px 32px;
@@ -271,7 +259,6 @@ a.active-text {
     }
 
     .closebtn {
-        // position: absolute;
         color: white;
         top: 0;
         right: 25px;
@@ -285,7 +272,6 @@ a.active-text {
         display: flex;
         justify-content: center;
         margin: 10px;
-        // font-size:
     }
 
     .bottomNavWrapper {
@@ -301,7 +287,6 @@ a.active-text {
         display: flex;
         justify-content: center;
         margin: 10px;
-        // font-size:
     }
 }
 
@@ -315,7 +300,6 @@ a.active-text {
     .left-data,
     .right-data {
         width: 45%;
-        // border: red solid 1px;
     }
 
     .right-align {
@@ -352,7 +336,6 @@ a.active-text {
             min-height: 50px;
             max-width: 80%;
             text-decoration: underline;
-            // border: green solid 2px;
             text-align: center;
             white-space: normal;
             margin-bottom: 10px;
