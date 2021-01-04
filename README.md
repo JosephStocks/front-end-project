@@ -77,7 +77,7 @@ API References:
 * [US Census available API](https://www.census.gov/data/developers/data-sets.html)
 
 Credits:
-* @JoesephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
+* @JosephStocks: Leader of the group that converted most of our ideas into workable, understandable code, and handled the majority of the MapBox API implementation.
              Bug fixer.
 * @laynemag: Handled the majority of the navigation toggle implementation, worked with Matthew to comb for the necessary Census information/implementation, and
              handled most styling.
