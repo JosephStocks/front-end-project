@@ -187,8 +187,7 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                     (graduateProf / totalEdu) *
                     100
                 ).toFixed(2)}% (${graduateProf.toLocaleString()})`;
-                // console.log(hoveredStateId, targetObj.properties.PUMACE10);
-                // hoveredStateId = e.features[0].properties.DISTRICT;
+
                 map.setFeatureState(
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: true }
@@ -216,15 +215,11 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
 
 pullMicroAndLoad();
 
-// pullSchoolAndLoad();
-
 function handler1() {
-    //alert('First handler: ' + $(this).text());
     pullMicroAndLoad();
     $(this).one("click", handler2);
 }
 function handler2() {
-    //alert('Second handler: ' + $(this).text());
     pullSchoolAndLoad();
     $(this).one("click", handler1);
 }
@@ -232,7 +227,6 @@ $(".toggle-map").one("click", handler2);
 
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
-        // districtJSON.id = districtJSON.properties.DISTRICT;
         districtJSON.id = districtJSON.properties.PUMACE10;
     }
     return districtsArr;
@@ -240,7 +234,6 @@ const addIDtoEachMicroArea = (districtsArr) => {
 
 const addIDtoEachSchoolDistrict = (districtsArr) => {
     for (const districtJSON of districtsArr) {
-        // districtJSON.id = districtJSON.properties.DISTRICT;
         districtJSON.id = districtJSON.properties.UNSDLEA;
     }
     return districtsArr;
@@ -249,6 +242,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
 let widthMatch = window.matchMedia("(max-width: 900px)");
 
 if (widthMatch.matches) {
+    $(".censusInfo").off("click");
     $(".expandDataMSG").show();
     $(".hideDataMSG").hide();
     $(".data-wrapper").hide();
@@ -277,6 +271,7 @@ if (widthMatch.matches) {
     $(".expandDataMSG").hide();
     $(".hideDataMSG").hide();
     $(".censusInfo").off("click");
+    $(".bottomnav").off("click");
 
     $(".sidenav").click((element) => {
         var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
@@ -298,6 +293,7 @@ if (widthMatch.matches) {
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
+        $(".censusInfo").off("click");
         $(".expandDataMSG").show();
         $(".hideDataMSG").hide();
         $(".data-wrapper").hide();
@@ -326,6 +322,7 @@ widthMatch.addEventListener("change", function (mm) {
         $(".expandDataMSG").hide();
         $(".hideDataMSG").hide();
         $(".censusInfo").off("click");
+        $(".bottomnav").off("click");
 
         $(".sidenav").click((element) => {
             var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
