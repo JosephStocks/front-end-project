@@ -5,6 +5,18 @@ body {
     height: 100px;
 }
 
+.invisible {
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.text-truncate {
+    overflow: hidden;
+}
+
 #map {
     position: absolute;
     top: 0;
@@ -30,21 +42,22 @@ ul {
     flex-direction: column;
 }
 
-#hamburger-button {
-    transition: 5s;
-}
+// #hamburger-button {
+//     transition: 5s;
+// }
 
 // The button used to open the sidebar
 .openbtn {
     font-size: 25px;
     cursor: pointer;
-    background-color: #111;
+    background-color: rgba(51, 51, 51, 0.95);
     color: white;
-    padding: 5px 10px;
+    padding: 10px;
+    padding-top: 8px;
     border: none;
     border-radius: 25%;
-    margin-left: 5vh;
-    margin-top: 5vh;
+    margin: 1vh;
+    text-align: start;
 }
 
 .censusInfo {
@@ -103,19 +116,20 @@ li {
 
 .right-align {
     display: inline-block;
-    width: 110px;
+    width: 130px;
 }
 
 .sidenav {
     height: 100%; // 100% Full-height
-    width: 0; //0 width - change this with JavaScript
+    // width: 0; //0 width - change this with JavaScript
+    width: 0px;
     position: fixed; // Stay in place
-    z-index: 1; // Stay on top
+    z-index: 200; // Stay on top
     top: 0; // Stay at the top
     left: 0;
-    background-color: rgba(17, 17, 17, 0.418);
+    background-color: rgb(17, 17, 17);
     overflow-x: hidden; // Disable horizontal scroll
-    padding-top: 150px; // Place content 60px from the top
+
     transition: 0.3s; // 0.5 second transition effect to slide in the sidenav
 
     a {
@@ -228,6 +242,69 @@ a.active-text {
     text-shadow: 0 0 15px rgba(91, 148, 194, 0.5) !important;
 }
 
+.bottomnav {
+    // height: 30px;
+    // width: 0; //0 width - change this with JavaScript
+    width: 100%;
+    position: fixed; // Stay in place
+    z-index: 200; // Stay on top
+    bottom: 0; // Stay at the top
+    // left: 0;
+    background-color: rgb(17, 17, 17);
+    // overflow-x: hidden; // Disable horizontal scroll
+
+    transition: 0.3s; // 0.5 second transition effect to slide in the sidenav
+
+    a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        text-shadow: 3px 2px black;
+        color: #ffffff;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            color: #f1f1f1;
+        }
+    }
+
+    .closebtn {
+        // position: absolute;
+        color: white;
+        top: 0;
+        right: 25px;
+        font-size: 50px;
+        margin-left: 50px;
+    }
+
+    .openBottomBar {
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        // font-size:
+    }
+
+    .bottomNavWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .closeBottomBar {
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        // font-size:
+    }
+}
+
 @media all and (min-width: 600px) and (max-width: 799px) {
     .data-wrapper {
         display: flex;
@@ -240,6 +317,11 @@ a.active-text {
         width: 45%;
         // border: red solid 1px;
     }
+
+    .right-align {
+        display: inline-block;
+        width: 115px;
+    }
 }
 
 @media all and (min-width: 800px) {
@@ -249,7 +331,7 @@ a.active-text {
         margin-top: 1px;
         margin-right: 1px;
         padding: 5px;
-        width: 25%;
+        width: 40%;
         border: 2px solid black;
         font-size: 14px;
         color: black;
@@ -284,11 +366,35 @@ a.active-text {
 
     .right-align {
         display: inline-block;
-        width: 140px;
+        width: 110px;
     }
 
     .inactive {
         display: none !important;
+    }
+}
+
+@media all and (min-width: 1400px) {
+    .censusInfo {
+        position: absolute;
+        font-family: sans-serif;
+        margin-top: 1px;
+        margin-right: 1px;
+        padding: 5px;
+        width: 25%;
+        border: 2px solid black;
+        font-size: 14px;
+        color: black;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 2rem;
+        display: inline-block;
+        right: 0px;
+    }
+
+    .right-align {
+        display: inline-block;
+        width: 140px;
     }
 }
 
@@ -297,7 +403,7 @@ a.active-text {
     border-radius: 4px;
     background-color: #4684e7;
     border: none;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     font-size: 15px;
     padding: 10px;
@@ -305,6 +411,17 @@ a.active-text {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+}
+
+.sideNavWrapper {
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin: auto;
 }
 
 .button span {
@@ -315,7 +432,7 @@ a.active-text {
 }
 
 .button span:after {
-    content: '\00bb';
+    content: "\00bb";
     position: absolute;
     opacity: 0;
     top: 0;

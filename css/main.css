@@ -5,6 +5,18 @@ body {
   height: 100px;
 }
 
+.invisible {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+}
+
 #map {
   position: absolute;
   top: 0;
@@ -33,21 +45,17 @@ ul {
           flex-direction: column;
 }
 
-#hamburger-button {
-  -webkit-transition: 5s;
-  transition: 5s;
-}
-
 .openbtn {
   font-size: 25px;
   cursor: pointer;
-  background-color: #111;
+  background-color: rgba(51, 51, 51, 0.95);
   color: white;
-  padding: 5px 10px;
+  padding: 10px;
+  padding-top: 8px;
   border: none;
   border-radius: 25%;
-  margin-left: 5vh;
-  margin-top: 5vh;
+  margin: 1vh;
+  text-align: start;
 }
 
 .censusInfo {
@@ -121,19 +129,18 @@ li {
 
 .right-align {
   display: inline-block;
-  width: 110px;
+  width: 130px;
 }
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 0px;
   position: fixed;
-  z-index: 1;
+  z-index: 200;
   top: 0;
   left: 0;
-  background-color: rgba(17, 17, 17, 0.418);
+  background-color: #111111;
   overflow-x: hidden;
-  padding-top: 150px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -271,6 +278,75 @@ a.active-text {
   text-shadow: 0 0 15px rgba(91, 148, 194, 0.5) !important;
 }
 
+.bottomnav {
+  width: 100%;
+  position: fixed;
+  z-index: 200;
+  bottom: 0;
+  background-color: #111111;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bottomnav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 3px 2px black;
+  color: #ffffff;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bottomnav a:hover {
+  color: #f1f1f1;
+}
+
+.bottomnav .closebtn {
+  color: white;
+  top: 0;
+  right: 25px;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+.bottomnav .openBottomBar {
+  color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+
+.bottomnav .bottomNavWrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+}
+
+.bottomnav .closeBottomBar {
+  color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+
 @media all and (min-width: 600px) and (max-width: 799px) {
   .data-wrapper {
     display: -webkit-box;
@@ -287,6 +363,10 @@ a.active-text {
   .right-data {
     width: 45%;
   }
+  .right-align {
+    display: inline-block;
+    width: 115px;
+  }
 }
 
 @media all and (min-width: 800px) {
@@ -296,7 +376,7 @@ a.active-text {
     margin-top: 1px;
     margin-right: 1px;
     padding: 5px;
-    width: 25%;
+    width: 40%;
     border: 2px solid black;
     font-size: 14px;
     color: black;
@@ -334,10 +414,33 @@ a.active-text {
   }
   .right-align {
     display: inline-block;
-    width: 140px;
+    width: 110px;
   }
   .inactive {
     display: none !important;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .censusInfo {
+    position: absolute;
+    font-family: sans-serif;
+    margin-top: 1px;
+    margin-right: 1px;
+    padding: 5px;
+    width: 25%;
+    border: 2px solid black;
+    font-size: 14px;
+    color: black;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    display: inline-block;
+    right: 0px;
+  }
+  .right-align {
+    display: inline-block;
+    width: 140px;
   }
 }
 
@@ -346,7 +449,7 @@ a.active-text {
   border-radius: 4px;
   background-color: #4684e7;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   font-size: 15px;
   padding: 10px;
@@ -355,6 +458,21 @@ a.active-text {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+
+.sideNavWrapper {
+  margin-top: 150px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button {
+  margin: auto;
 }
 
 .button span {
@@ -366,7 +484,7 @@ a.active-text {
 }
 
 .button span:after {
-  content: "\21BB";
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;

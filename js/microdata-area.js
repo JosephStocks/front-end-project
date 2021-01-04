@@ -248,7 +248,7 @@ function handler2() {
     pullSchoolAndLoad();
     $(this).one("click", handler1);
 }
-$("#toggle-map").one("click", handler2);
+$(".toggle-map").one("click", handler2);
 
 const addIDtoEachMicroArea = (districtsArr) => {
     for (const districtJSON of districtsArr) {
@@ -269,6 +269,7 @@ const addIDtoEachSchoolDistrict = (districtsArr) => {
 let widthMatch = window.matchMedia("(max-width: 900px)");
 
 if (widthMatch.matches) {
+    $(".censusInfo").off("click");
     $(".expandDataMSG").show();
     $(".hideDataMSG").hide();
     $(".data-wrapper").hide();
@@ -279,16 +280,46 @@ if (widthMatch.matches) {
         $(".data-wrapper").slideToggle(275);
     });
 
-    console.log("FirstFunction Small");
+    //navbars
+    $(".sidenav").hide();
+    $("#hamburger-button").hide();
+    $(".bottomnav").show();
+    $(".bottomnav a").hide();
+    $(".bottomnav .bottomNavWrapper").hide();
+    $(".bottomnav .closeBottomBar").hide();
+
+    $(".bottomnav").click((element) => {
+        $(".bottomNavWrapper").slideToggle(275);
+        $(".closeBottomBar").toggle();
+        $(".openBottomBar").slideToggle(275);
+    });
 } else {
     $(".data-wrapper").show();
     $(".expandDataMSG").hide();
     $(".hideDataMSG").hide();
     $(".censusInfo").off("click");
+
+    $(".sidenav").click((element) => {
+        var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
+        $(".sidenav").animate({ width: toggleWidth }, 400, () => {
+            $("#hamburger-button").toggle();
+        });
+    });
+    $("#hamburger-button").click((element) => {
+        var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
+        $(".sidenav").animate({ width: toggleWidth }, 400, () => {
+            $("#hamburger-button").toggle();
+        });
+    });
+
+    $(".sidenav").show();
+    $("#hamburger-button").show();
+    $(".bottomnav").hide();
 }
 
 widthMatch.addEventListener("change", function (mm) {
     if (mm.matches) {
+        $(".censusInfo").off("click");
         $(".expandDataMSG").show();
         $(".hideDataMSG").hide();
         $(".data-wrapper").hide();
@@ -298,10 +329,41 @@ widthMatch.addEventListener("change", function (mm) {
             $(".hideDataMSG").toggle();
             $(".data-wrapper").slideToggle(275);
         });
+
+        //navbars
+        $(".sidenav").hide();
+        $("#hamburger-button").hide();
+        $(".bottomnav").show();
+        $(".bottomnav a").hide();
+        $(".bottomnav .bottomNavWrapper").hide();
+        $(".bottomnav .closeBottomBar").hide();
+
+        $(".bottomnav").click((element) => {
+            $(".bottomNavWrapper").slideToggle(275);
+            $(".closeBottomBar").toggle();
+            $(".openBottomBar").slideToggle(275);
+        });
     } else {
         $(".data-wrapper").show();
         $(".expandDataMSG").hide();
         $(".hideDataMSG").hide();
         $(".censusInfo").off("click");
+
+        $(".sidenav").click((element) => {
+            var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
+            $(".sidenav").animate({ width: toggleWidth }, 400, () => {
+                $("#hamburger-button").toggle();
+            });
+        });
+        $("#hamburger-button").click((element) => {
+            var toggleWidth = $(".sidenav").width() == 0 ? "250px" : "0px";
+            $(".sidenav").animate({ width: toggleWidth }, 400, () => {
+                $("#hamburger-button").toggle();
+            });
+        });
+
+        $(".sidenav").show();
+        $("#hamburger-button").show();
+        $(".bottomnav").hide();
     }
 });
