@@ -44,11 +44,7 @@ var censusCodeArr = [
         htmlID: "totalPop",
         APIcode: "B01003_001E",
     },
-    // {
-    //     fullName: "Total Race Population",
-    //     htmlID: "totalPop",
-    //     APIcode: "B02001_001E",
-    // },
+    
     {
         fullName: "Male Population",
         htmlID: "malePop",
@@ -64,16 +60,7 @@ var censusCodeArr = [
         htmlID: "mAge",
         APIcode: "B01002_001E",
     },
-    // {
-    //     fullName: "Individual Income by Birth Place",
-    //     htmlID: "incomeByBirth",
-    //     APIcode: "B06010_001E",
-    // },
-    // {
-    //     fullName: "Individual Income",
-    //     htmlID: "income",
-    //     APIcode: "B07010_001E",
-    // },
+
     {
         fullName: "Median Household Income",
         htmlID: "medianIncome",

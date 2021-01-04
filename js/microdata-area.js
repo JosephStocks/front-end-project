@@ -131,8 +131,6 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                 document.getElementById(
                     "totalPop"
                 ).textContent = totalPop.toLocaleString();
-                // document.getElementById("malePop").textContent = malePop;
-                // document.getElementById("femalePop").textContent = femalePop;
                 document.getElementById("medianAge").textContent = medianAge;
                 document.getElementById(
                     "medianIncome"
@@ -210,10 +208,6 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                     { source: "neighborhood-outline-data", id: hoveredStateId },
                     { hover: false }
                 );
-                // hides the data div when not on the highlighted district
-                // document
-                //     .getElementsByClassName("censusInfo")[0]
-                //     .classList.add("invisible");
             }
             hoveredStateId = null;
         });
