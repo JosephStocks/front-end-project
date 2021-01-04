@@ -35,7 +35,7 @@ const pullMicroAndLoad = () => {
 const loadMap = (geojsonObject, propertyIDName, dataObject) => {
     mapboxgl.accessToken =
         "pk.eyJ1IjoianBzdG9ja3M2MyIsImEiOiJja2l5d2NhMWcxMWg0MnFteWEzeTJuamEyIn0.PdNZpYTkVaLLuCScXpjxiw";
-    var map = new mapboxgl.Map({
+        var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
         center: [-95.36776743580762, 29.771805275841665],
@@ -218,6 +218,20 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
             hoveredStateId = null;
         });
     });
+
+    // var layerList = document.getElementById('mapViewOptions');
+    // var inputs = layerList.getElementsByTagName('input');
+    
+    // function switchLayer(layer) {
+    //     var layerId = layer.target.id;
+    //     map.setStyle('mapbox://styles/mapbox/' + layerId);
+    // }
+    
+    // for (var i = 0; i < inputs.length; i++) {
+    //     inputs[i].onclick = switchLayer;
+    //     loadMap();
+    // }
+    
 };
 
 pullMicroAndLoad();
