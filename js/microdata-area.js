@@ -131,7 +131,6 @@ const loadMap = (geojsonObject, propertyIDName, dataObject) => {
                 document.getElementById(
                     "totalPop"
                 ).textContent = totalPop.toLocaleString();
-
                 document.getElementById("medianAge").textContent = medianAge;
                 document.getElementById(
                     "medianIncome"

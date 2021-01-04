@@ -112,16 +112,14 @@ li {
 }
 
 .sidenav {
-    height: 100%;
-    // width: 0;
+    height: 100%; 
     width: 0px;
-    position: fixed;
-    z-index: 200;
-    top: 0;
+    position: fixed; 
+    z-index: 200; 
+    top: 0; 
     left: 0;
     background-color: rgb(17, 17, 17);
-    overflow-x: hidden;
-
+    overflow-x: hidden; 
     transition: 0.3s;
 
     a {
@@ -234,14 +232,13 @@ a.active-text {
     text-shadow: 0 0 15px rgba(91, 148, 194, 0.5) !important;
 }
 
-.bottomnav {
+.bottomnav { 
     width: 100%;
-    position: fixed;
-    z-index: 200;
-    bottom: 0;
+    position: fixed; 
+    z-index: 200; 
+    bottom: 0; 
     background-color: rgb(17, 17, 17);
-
-    transition: 0.3s;
+    transition: 0.3s; 
 
     a {
         padding: 8px 8px 8px 32px;
@@ -405,29 +402,4 @@ a.active-text {
 
 .button {
     margin: auto;
-}
-
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.button span:after {
-    content: "\00bb";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
 }
