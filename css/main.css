@@ -5,6 +5,18 @@ body {
   height: 100px;
 }
 
+.invisible {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+}
+
 #map {
   position: absolute;
   top: 0;
