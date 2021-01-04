@@ -12,7 +12,7 @@ We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queri
 
 Features incude: Navigation toggle, district toggle, zoom capability, hover/click information view.
 </div>
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 <div>
 <img align="center" width="100%" src="https://user-images.githubusercontent.com/67352060/103552560-b8955f00-4e71-11eb-9b2b-ce62425a4753.gif" />
  </div>
