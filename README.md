@@ -9,6 +9,8 @@ We implemented code primarily with HTML, JavaScript, CSS, Bootstrap, Media Queri
 
 Features incude: Navigation toggle, district toggle, zoom capability, hover/click information view.
 
+(https://imgur.com/a/kOgpoeX)
+
 code ex.
 ```
 // the following is fetching the selected census data using pre-selected area IDs correlated to the census data
