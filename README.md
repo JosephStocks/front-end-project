@@ -1,5 +1,5 @@
 # CensusMap
-## [censusmap.netlify.app](censusmap.netlify.app)
+## censusmap.netlify.app
 
 Our project is a visual representation of US Census API data on a MapBox visual API.
 The final product allows users to interactively hover/click on different areas of Houston and obtain certain Census data from those areas.
